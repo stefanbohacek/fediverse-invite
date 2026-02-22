@@ -33,6 +33,7 @@ router.get("/", async (req, res) => {
           notation: "compact",
         }).format(serverInfo.nodeInfo?.usage?.users.activeMonth),
         apps: appIDs.split(",").map((id) => getAppByID(id)),
+        show_one_app: appIDs.split(",").length === 1,
         footer_scripts: process.env.FOOTER_SCRIPTS,
       });
     } catch (error) {
