@@ -1,0 +1,73 @@
+<h1 class="mt-5">
+  Join the fediverse!
+</h1>
+<p class="lead mt-5">
+  <a href="https://jointhefediverse.net/">Fediverse</a> is a common name for social media sites that cooperate instead
+  of competing. It's made up of many
+  communities that use different platforms, and you can join any of them and follow and interact with people across all
+  of the fediverse.
+</p>
+<p class="lead mt-5">
+  Here is one such community.
+</p>
+<div class="card mt-5">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <p class="fw-bold lead">
+          {{server_name}}
+        </p>
+      </div>
+      <div class="col-6 text-end">
+        <span class="badge rounded-pill text-bg-info">{{server_post_count}} posts</span>
+        <span class="badge rounded-pill text-bg-success">{{server_user_count}} active users</span>
+      </div>
+      <div class="col-12">
+        <p class="lead">
+          {{server_description}}
+        </p>
+        <p class="mt-5">
+          <a class="btn btn-primary"
+            href="{{server_url}}">Explore and sign up</a>
+        </p>
+      </div>
+    </div>
+    <!--
+        <img width="250"
+          class="rounded bg-dark"
+          src="{{server_thumbnail_url}}"
+          alt="">
+      -->
+  </div>
+</div>
+<p class="lead mt-5">
+  And here are just a few of the many apps that you can use.
+</p>
+
+<div class="row mt-5">
+  {{#each apps}}
+  <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-4">
+    <div class="card h-100">
+      <img src="{{thumbnail_url}}"
+        class="card-img-top"
+        alt="">
+      <div class="card-body">
+        <span class="badge rounded-pill text-bg-info float-end fs-6">{{platform}}</span>
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text fs-5">{{description}}</p>
+      </div>
+      <div class="card-footer bg-body border-0 pb-3">
+        <a href="{{get_link_url}}"
+          class="fs-6 btn btn-primary">{{get_link_title}}</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<p class="lead mt-5">
+  Need to find more people to follow? Check out <a
+    href="https://most-followed-mastodon-accounts.stefanhayden.com/">popular fediverse accounts</a>, <a
+    href="https://fedidevs.com/starter-packs/">starter packs</a>, or <a href="https://fedi.directory/">this fediverse
+    directory</a>.
+</p>
