@@ -14,6 +14,8 @@ router.get("/", async (req, res) => {
   if (!domainBlocks.includes(server)) {
     const serverInfo = await getServerInfo(server);
 
+    // console.log(serverInfo);
+
     try {
       res.render("../views/home.handlebars", {
         server_domain: serverInfo.domain,
@@ -34,6 +36,7 @@ router.get("/", async (req, res) => {
         footer_scripts: process.env.FOOTER_SCRIPTS,
       });
     } catch (error) {
+      console.log(error);
       res.render("../views/blocked.handlebars", {
         server,
         footer_scripts: process.env.FOOTER_SCRIPTS,
