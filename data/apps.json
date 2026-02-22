@@ -5,7 +5,7 @@
     "description": "The official Android app for Mastodon. Blazing fast and stunningly beautiful.",
     "thumbnail": "mastodon-official-android",
     "platform": "android",
-    "get_link_url": "https://play.google.com/store/apps/details?id=org.joinmastodon.android&hl=en_US",
+    "get_link_url": "https://play.google.com/store/apps/details?id=org.joinmastodon.android",
     "get_link_title": "Download"
   },
   {
@@ -69,6 +69,24 @@
     "thumbnail": "metatext-ios",
     "platform": "ios",
     "get_link_url": "https://apps.apple.com/us/app/metatext/id1523996615",
+    "get_link_title": "Download"
+  },
+  {
+    "id": "9",
+    "name": "Pixelfed",
+    "description": "Discover a refreshing way to share and enjoy photos with Pixelfed for Android.",
+    "thumbnail": "pixelfed-android",
+    "platform": "android",
+    "get_link_url": "https://play.google.com/store/apps/details?id=com.pixelfed",
+    "get_link_title": "Download"
+  },
+  {
+    "id": "10",
+    "name": "Pixelfed",
+    "description": "NShare your photography with a community that values creativity, authenticity, and privacy.",
+    "thumbnail": "pixelfed-ios",
+    "platform": "ios",
+    "get_link_url": "https://apps.apple.com/us/app/pixelfed/id1632519816",
     "get_link_title": "Download"
   }
 ]
