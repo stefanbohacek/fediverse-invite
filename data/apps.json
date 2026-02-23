@@ -4,7 +4,7 @@
     "name": "Mastodon",
     "description": "The official Android app for Mastodon. Blazing fast and stunningly beautiful.",
     "thumbnail": "mastodon-official-android",
-    "platform": "android",
+    "platform": "Android",
     "get_link_url": "https://play.google.com/store/apps/details?id=org.joinmastodon.android",
     "get_link_title": "Download"
   },
@@ -13,7 +13,7 @@
     "name": "Mastodon",
     "description": "The official iOS app for Mastodon. No algorithms, ads, or clickbait in sight.",
     "thumbnail": "mastodon-official-ios",
-    "platform": "ios",
+    "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/mastodon/id1571998974",
     "get_link_title": "Download"
   },
@@ -22,7 +22,7 @@
     "name": "Tusky",
     "description": "A free and open-source Mastodon app for Androids.",
     "thumbnail": "tusky-android",
-    "platform": "android",
+    "platform": "Android",
     "get_link_url": "https://tusky.app/",
     "get_link_title": "Learn more"
   },
@@ -31,14 +31,14 @@
     "name": "Ice Cubes",
     "description": "Speedy, customizable, and cold.",
     "thumbnail": "ice-cubes-ios",
-    "platform": "ios",
+    "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/ice-cubes-for-mastodon/id6444915884",
     "get_link_title": "Download"
   },
   {
     "id": "5",
     "name": "Phanpy",
-    "description": "A beautifully designed web app.",
+    "description": "A beautifully designed web app that works great on your phone.",
     "thumbnail": "phanpy-web",
     "platform": "web",
     "get_link_url": "https://phanpy.social/",
@@ -49,7 +49,7 @@
     "name": "Fedilab",
     "description": "A multi-account fediverse client.",
     "thumbnail": "fedilab-android",
-    "platform": "android",
+    "platform": "Android",
     "get_link_url": "https://fedilab.app/projects/fedilab/",
     "get_link_title": "Download"
   },
@@ -58,7 +58,7 @@
     "name": "Ivory",
     "description": "Fast. Beautiful. Smooth like butter.",
     "thumbnail": "ivory-ios",
-    "platform": "ios",
+    "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/ivory-for-mastodon-by-tapbots/id6444602274",
     "get_link_title": "Download"
   },
@@ -67,7 +67,7 @@
     "name": "Metatext",
     "description": "No ads, tracking, or algorithmic timeline.",
     "thumbnail": "metatext-ios",
-    "platform": "ios",
+    "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/metatext/id1523996615",
     "get_link_title": "Download"
   },
@@ -76,17 +76,26 @@
     "name": "Pixelfed",
     "description": "Discover a refreshing way to share and enjoy photos with Pixelfed for Android.",
     "thumbnail": "pixelfed-android",
-    "platform": "android",
+    "platform": "Android",
     "get_link_url": "https://play.google.com/store/apps/details?id=com.pixelfed",
     "get_link_title": "Download"
   },
   {
     "id": "10",
     "name": "Pixelfed",
-    "description": "NShare your photography with a community that values creativity, authenticity, and privacy.",
+    "description": "Share your photography with a community that values creativity, authenticity, and privacy.",
     "thumbnail": "pixelfed-ios",
-    "platform": "ios",
+    "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/pixelfed/id1632519816",
     "get_link_title": "Download"
+  },
+  {
+    "id": "11",
+    "name": "iPhanpy",
+    "description": "Unofficial iOS version of Phanpy for a smoother experience.",
+    "thumbnail": "iphanpy-ios",
+    "platform": "iOS",
+    "get_link_url": "https://fantinel.dev/blog/iphanpy-mastodon-client",
+    "get_link_title": "Learn more"
   }
 ]
