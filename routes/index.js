@@ -10,6 +10,17 @@ const getAppByID = (id) => apps.find((app) => app.id === id);
 router.get("/", async (req, res) => {
   const server = req.query.server ?? "mastodon.social";
   const appIDs = req.query.apps ?? "1,2,3,4";
+  const appPlatforms = apps.map((app) => app.platform);
+
+  let appList = [];
+
+  if (appIDs === "all") {
+    appList = apps;
+  } else if (appPlatforms.includes(appIDs)) {
+    appList = apps.filter((app) => app.platform === appIDs);
+  } else {
+    appList = appIDs.split(",").map((id) => getAppByID(id));
+  }
 
   if (!domainBlocks.includes(server)) {
     const serverInfo = await getServerInfo(server);
@@ -32,8 +43,8 @@ router.get("/", async (req, res) => {
         server_user_count: new Intl.NumberFormat("en-US", {
           notation: "compact",
         }).format(serverInfo.nodeInfo?.usage?.users.activeMonth),
-        apps: appIDs.split(",").map((id) => getAppByID(id)),
-        show_one_app: appIDs.split(",").length === 1,
+        apps: appList,
+        show_one_app: appList.length === 1,
         footer_scripts: process.env.FOOTER_SCRIPTS,
       });
     } catch (error) {
