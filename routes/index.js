@@ -10,14 +10,16 @@ const getAppByID = (id) => apps.find((app) => app.id === id);
 router.get("/", async (req, res) => {
   const server = req.query.server ?? "mastodon.social";
   const appIDs = req.query.apps ?? "1,2,3,4";
-  const appPlatforms = apps.map((app) => app.platform);
+  const appPlatforms = apps.map((app) => app.platform.toLowerCase());
 
   let appList = [];
 
   if (appIDs === "all") {
     appList = apps;
-  } else if (appPlatforms.includes(appIDs)) {
-    appList = apps.filter((app) => app.platform === appIDs);
+  } else if (appPlatforms.includes(appIDs.toLowerCase())) {
+    appList = apps.filter(
+      (app) => app.platform.toLowerCase() === appIDs.toLowerCase(),
+    );
   } else {
     appList = appIDs.split(",").map((id) => getAppByID(id));
   }
