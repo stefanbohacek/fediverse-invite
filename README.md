@@ -2,7 +2,7 @@
 
 # Fediverse Invitation
 
-A semi-customizable invitation page that lets you choose a serve and pick from a variety of popular fediverse apps.
+A semi-customizable invitation page that lets you choose a serve and pick from a variety of popular fediverse apps. (See the full list [here](https://github.com/stefanbohacek/fediverse-invite/blob/main/data/apps.json).)
 
 ### Development
 
