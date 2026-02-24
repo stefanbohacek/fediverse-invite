@@ -40,9 +40,9 @@
 </div>
 <p class="lead mt-5">
   {{#if show_one_app}}
-    And here is a great app you can use.
+  And here is a great app you can use.
   {{else}}
-    And here are just a few of the many apps that you can use.
+  And here are just a few of the many apps that you can use.
   {{/if}}
 </p>
 
@@ -50,9 +50,6 @@
   {{#each apps}}
   <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-4">
     <div class="card h-100">
-      <img src="{{thumbnail_url}}"
-        class="card-img-top"
-        alt="">
       <div class="card-body">
         <span class="badge rounded-pill text-bg-info float-end fs-6">{{platform}}</span>
         <h5 class="card-title">{{name}}</h5>
@@ -68,7 +65,9 @@
 </div>
 
 <p class="lead mt-5">
-  Want to find more people to follow? Check out some <a
-    href="https://most-followed-mastodon-accounts.stefanhayden.com/">popular accounts</a> or these <a
+  Want to find more people to follow? Check out some of these <a
+    href="https://most-followed-mastodon-accounts.stefanhayden.com/">popular accounts</a> and <a
     href="https://fedidevs.com/starter-packs/">starter packs</a>.
 </p>
+<div id="starter-packs"
+  class="row"></div>

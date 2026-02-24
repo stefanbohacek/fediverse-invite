@@ -5,6 +5,7 @@ import Handlebars from "handlebars";
 import { engine } from "express-handlebars";
 
 import indexRoute from "./routes/index.js";
+import starterpacksRoute from "./routes/starterpacks.js";
 
 Handlebars.registerHelper("ifEquals", (firstArg, secondArg, options) => {
   return firstArg === secondArg ? options.fn(this) : options.inverse(this);
@@ -35,6 +36,8 @@ app.use((req, res, next) => {
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 app.set("views", "./views");
+
 app.use("/", indexRoute);
+app.use("/starterpacks", starterpacksRoute);
 
 export default app;
