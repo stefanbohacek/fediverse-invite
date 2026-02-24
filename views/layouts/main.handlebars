@@ -49,41 +49,45 @@
     <!--
     <meta name="theme-color"
         content="#712cf9">
-    -->        
+    -->
 </head>
 
 <body class="d-flex flex-column h-100 m-0 p-0">
     <script>
-      const toggleDarkMode = (enabled) => {
-        if (enabled) {
-          document.body.setAttribute('data-bs-theme', 'dark');
-        } else {
-          document.body.setAttribute('data-bs-theme', 'light');
+        const toggleDarkMode = (enabled) => {
+            if (enabled) {
+                document.body.setAttribute('data-bs-theme', 'dark');
+            } else {
+                document.body.setAttribute('data-bs-theme', 'light');
+            }
         }
-      }
 
-      if (window.matchMedia) {
-        toggleDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      }
+        if (window.matchMedia) {
+            toggleDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        }
 
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        toggleDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
-      });
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            toggleDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
+        });
     </script>
     <main class="flex-shrink-0">
         <div class="container">
             {{{body}}}
         </div>
     </main>
-    <footer class="footer mt-auto py-3 text-center">
-        <div class="container mt-5">
-            Created by <a href="https://stefanbohacek.online/@stefan">Stefan Bohacek</a>. <a href="https://stefanbohacek.com/project/fediverse-invitation/">Learn more</a> and <a href="https://github.com/stefanbohacek/fediverse-invite">view source</a>.
+    <footer class="footer mt-auto py-3">
+        <div class="container my-5">
+            <small>
+                Created by <a href="https://stefanbohacek.online/@stefan">Stefan Bohacek</a> and curated by whoever
+                shared this link with you. Learn more <a href="https://stefanbohacek.com/project/fediverse-invitation/">on my
+                    blog</a> or <a href="https://github.com/stefanbohacek/fediverse-invite">view the source code</a>.
+            </small>
         </div>
     </footer>
     <script type="module"
         src="/js/main.js"
         async></script>
-    <script>{{{footer_scripts}}}</script>
+    <script>{ { { footer_scripts } } }</script>
 </body>
 
 </html>
