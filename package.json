@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon -L server.js",
+    "dev": "nodemon -L server.js -e js,mjs,json,handlebars",
     "translate": "node ./translations/script.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
