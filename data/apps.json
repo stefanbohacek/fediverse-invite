@@ -20,7 +20,7 @@
   {
     "id": "3",
     "name": "Tusky",
-    "description": "A free and open-source Mastodon app for Androids.",
+    "description": "A free and open-source Mastodon app for Android.",
     "thumbnail": "tusky-android",
     "platform": "Android",
     "get_link_url": "https://tusky.app/",
