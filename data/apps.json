@@ -3,7 +3,6 @@
     "id": "1",
     "name": "Mastodon",
     "description": "The official Android app for Mastodon. Blazing fast and stunningly beautiful.",
-    "thumbnail": "mastodon-official-android",
     "platform": "Android",
     "get_link_url": "https://play.google.com/store/apps/details?id=org.joinmastodon.android",
     "get_link_title": "Download"
@@ -12,7 +11,6 @@
     "id": "2",
     "name": "Mastodon",
     "description": "The official iOS app for Mastodon. No algorithms, ads, or clickbait in sight.",
-    "thumbnail": "mastodon-official-ios",
     "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/mastodon/id1571998974",
     "get_link_title": "Download"
@@ -21,7 +19,6 @@
     "id": "3",
     "name": "Tusky",
     "description": "A free and open-source Mastodon app for Android.",
-    "thumbnail": "tusky-android",
     "platform": "Android",
     "get_link_url": "https://tusky.app/",
     "get_link_title": "Learn more"
@@ -30,7 +27,6 @@
     "id": "4",
     "name": "Ice Cubes",
     "description": "Speedy, customizable, and cold.",
-    "thumbnail": "ice-cubes-ios",
     "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/ice-cubes-for-mastodon/id6444915884",
     "get_link_title": "Download"
@@ -39,7 +35,6 @@
     "id": "5",
     "name": "Phanpy",
     "description": "A beautifully designed web app that works great on your phone.",
-    "thumbnail": "phanpy-web",
     "platform": "web",
     "get_link_url": "https://phanpy.social/",
     "get_link_title": "Learn more"
@@ -48,7 +43,6 @@
     "id": "6",
     "name": "Fedilab",
     "description": "A multi-account fediverse client.",
-    "thumbnail": "fedilab-android",
     "platform": "Android",
     "get_link_url": "https://fedilab.app/projects/fedilab/",
     "get_link_title": "Download"
@@ -57,7 +51,6 @@
     "id": "7",
     "name": "Ivory",
     "description": "Fast. Beautiful. Smooth like butter.",
-    "thumbnail": "ivory-ios",
     "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/ivory-for-mastodon-by-tapbots/id6444602274",
     "get_link_title": "Download"
@@ -66,7 +59,6 @@
     "id": "8",
     "name": "Metatext",
     "description": "No ads, tracking, or algorithmic timeline.",
-    "thumbnail": "metatext-ios",
     "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/metatext/id1523996615",
     "get_link_title": "Download"
@@ -75,7 +67,6 @@
     "id": "9",
     "name": "Pixelfed",
     "description": "Discover a refreshing way to share and enjoy photos with Pixelfed for Android.",
-    "thumbnail": "pixelfed-android",
     "platform": "Android",
     "get_link_url": "https://play.google.com/store/apps/details?id=com.pixelfed",
     "get_link_title": "Download"
@@ -84,7 +75,6 @@
     "id": "10",
     "name": "Pixelfed",
     "description": "Share your photography with a community that values creativity, authenticity, and privacy.",
-    "thumbnail": "pixelfed-ios",
     "platform": "iOS",
     "get_link_url": "https://apps.apple.com/us/app/pixelfed/id1632519816",
     "get_link_title": "Download"
@@ -93,9 +83,89 @@
     "id": "11",
     "name": "iPhanpy",
     "description": "Unofficial iOS version of Phanpy for a smoother experience.",
-    "thumbnail": "iphanpy-ios",
     "platform": "iOS",
     "get_link_url": "https://fantinel.dev/blog/iphanpy-mastodon-client",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1000",
+    "name": "Mastodon for Apple II",
+    "description": "Works on any Apple II with 64kB of memory or more.",
+    "tags": ["retro"],
+    "platform": "Apple II",
+    "get_link_url": "https://www.colino.net/wordpress/mastodon-for-apple-ii/",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1001",
+    "name": "Macstodon",
+    "description": "Interact with a Mastodon server by viewing timelines, posting toots, and more!",
+    "tags": ["retro"],
+    "platform": "Classic Mac OS",
+    "get_link_url": "https://github.com/smallsco/macstodon",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1002",
+    "name": "MOStodon",
+    "description": "A C64 compatible Modem is required.",
+    "tags": ["retro"],
+    "platform": "Commodore 64",
+    "get_link_url": "https://github.com/Havoc6502/MOStodon",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1003",
+    "name": "amidon",
+    "description": "A Mastodon client for Amiga computers.",
+    "tags": ["retro"],
+    "platform": "Commodore Amiga",
+    "get_link_url": "https://github.com/BlitterStudio/amidon",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1004",
+    "name": "DOStodon",
+    "description": "MS-DOS Mastodon client.",
+    "tags": ["retro"],
+    "platform": "MS-DOS",
+    "get_link_url": "https://github.com/SuperIlu/DOStodon",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1005",
+    "name": "BREXXTODON",
+    "description": "A REXX based mastodon reader for MVS 3.8j.",
+    "tags": ["retro"],
+    "platform": "MVS",
+    "get_link_url": "https://github.com/mainframed/BREXXTODON",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1006",
+    "name": "Heffalump",
+    "description": "A palmOS mastodon client.",
+    "tags": ["retro"],
+    "platform": "Palm OS",
+    "get_link_url": "https://github.com/knickish/heffalump",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1007",
+    "name": "Mastodon 3.11 For Workgroups",
+    "description": "Works on Windows 95 and higher",
+    "tags": ["retro"],
+    "platform": "Windows 9X",
+    "get_link_url": "https://github.com/meyskens/mastodon-for-workgroups",
+    "get_link_title": "Learn more"
+  },
+  {
+    "id": "1008",
+    "name": "awsom",
+    "description": "Mastodon client for old windows-based personal computers.",
+    "tags": ["retro"],
+    "platform": "Old Windows",
+    "get_link_url": "https://github.com/sdomi/awsom",
     "get_link_title": "Learn more"
   }
 ]

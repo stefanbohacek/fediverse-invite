@@ -1,25 +1,32 @@
 import express from "express";
 import getServerInfo from "../modules/getServerInfo.js";
+import slugify from "../modules/slugify.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
 
 const router = express.Router();
 
+const appPlatforms = apps.map((app) => slugify(app.platform));
+const appTags = [...new Set(apps.flatMap((app) => app.tags ?? []))];
+
 const getAppByID = (id) => apps.find((app) => app.id === id);
+const getAppByTag = (tag) =>
+  apps.filter((app) => app.tags && app.tags.includes(tag));
 
 router.get("/", async (req, res) => {
   const server = req.query.server ?? "mastodon.social";
   const appIDs = req.query.apps ?? "1,2,3,4";
-  const appPlatforms = apps.map((app) => app.platform.toLowerCase());
 
   let appList = [];
 
   if (appIDs === "all") {
     appList = apps;
-  } else if (appPlatforms.includes(appIDs.toLowerCase())) {
-    appList = apps.filter(
-      (app) => app.platform.toLowerCase() === appIDs.toLowerCase(),
-    );
+  } else if (appPlatforms.includes(slugify(appIDs))) {
+    appList = apps.filter((app) => slugify(app.platform) === slugify(appIDs));
+  } else if (appTags.includes(appIDs.toLowerCase())) {
+    appList = appIDs
+      .split(",")
+      .flatMap((tag) => getAppByTag(tag.toLowerCase()));
   } else {
     appList = appIDs.split(",").map((id) => getAppByID(id));
   }
