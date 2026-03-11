@@ -1,0 +1,14 @@
+{
+  "intro_title": "¡Únete al fediverso!",
+  "intro_description": "El fediverso está compuesto por muchas comunidades y plataformas, como Mastodon, Pixelfed, o Loops, <a href='https://jointhefediverse.net/join'>y muchas más</a>, que trabajan conjuntamente en vez de competir entre sí. Puedes unirte a cualquiera de ellas y seguir e interactuar con personas de todo el fediverso con una sola cuenta.",
+  "intro_community": "Aquí hay una comunidad de este tipo.",
+  "intro_community_post_count_label_plural": "publicaciones",
+  "intro_community_user_count_label_plural": "usuarios activos",
+  "cta_sign_up": "Explora y regístrate",
+  "cta_secondary": "Encontrar otra comunidad",
+  "intro_apps_single": "Y aquí tienes una aplicación estupenda que puedes usar.",
+  "intro_apps_multiple": "Y estas son solo algunas de las muchas aplicaciones que puedes utilizar.",
+  "popular_accounts_description": "¿Quieres encontrar más gente a la que seguir? Echa un vistazo a algunas de las",
+  "popular_accounts_link_title": "cuentas populares",
+  "starter_packs_link_title": "y packs de inicio"
+}

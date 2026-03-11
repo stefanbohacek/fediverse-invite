@@ -1,0 +1,13 @@
+{
+  "label": "Español",
+  "label_lat": "espanol",
+  "label_en": "Spanish",
+  "lang_dir": "LTR",
+  "available": true,
+  "translators": [
+    {
+      "name": "Isaa",
+      "url": "https://github.com/isabelsaa"
+    }
+  ]
+}
