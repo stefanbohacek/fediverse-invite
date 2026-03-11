@@ -39,12 +39,12 @@ router.get("/", async (req, res) => {
     const downloadURLs = ["apps.apple.com", "play.google.com"];
 
     apps.forEach((app) => {
-      app.name = `apps_app_${app.id}_name`;
-      app.description = `apps_app_${app.id}_description`;
+      app.name = res.__(`apps_app_${app.id}_name`);
+      app.description = res.__(`apps_app_${app.id}_description`);
       if (downloadURLs.some((url) => app.get_link_url.includes(url))) {
-        app.get_link_label = "apps_download_link_label";
+        app.get_link_label = res.__("apps_download_link_label");
       } else {
-        app.get_link_label = "apps_learn_more_link_label";
+        app.get_link_label = res.__("apps_learn_more_link_label");
       }
     });
 
