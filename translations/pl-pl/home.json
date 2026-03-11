@@ -1,0 +1,14 @@
+{
+  "intro_title": "Dołącz do Fediwersum!",
+  "intro_description": "Fediwersum składa się z wielu społeczności i platform, takich jak Mastodon, Pixelfed lub Loops <a href='https://jointhefediverse.net/join'>i wielu innych</a>, które współpracują ze sobą zamiast rywalizować. Możesz dołączyć do którejkolwiek z nich i obserwować oraz wchodzić w interakcje z ludźmi z całego Fediwersum z jednego konta.",
+  "intro_community": "Oto jedna z takich społeczności.",
+  "intro_community_post_count_label_plural": "wpisów",
+  "intro_community_user_count_label_plural": "aktywnych osób",
+  "cta_sign_up": "Przeglądaj i zarejestruj się",
+  "cta_secondary": "Znajdź inną",
+  "intro_apps_single": "A tu jest świetna aplikacja, której możesz użyć.",
+  "intro_apps_multiple": "A tu jest kilka z wielu aplikacji, których możesz użyć.",
+  "popular_accounts_description": "Chcesz znaleźć więcej osób do obserwowania? Przejrzyj",
+  "popular_accounts_link_title": "popularne konta",
+  "starter_packs_link_title": "i pakiety startowe"
+}
