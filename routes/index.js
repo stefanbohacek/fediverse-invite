@@ -58,6 +58,15 @@ router.get("/", async (req, res) => {
           rel: "noreferrer",
           target: "_blank",
         },
+        value: (url) => {
+          const urlParsed = new URL(url);
+          return (
+            urlParsed.host +
+            urlParsed.pathname +
+            urlParsed.search +
+            urlParsed.hash
+          );
+        },
       },
     );
 
