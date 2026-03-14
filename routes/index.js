@@ -1,6 +1,7 @@
 import express from "express";
 import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
+import validateDomain from "../modules/validateDomain.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
 
@@ -32,7 +33,7 @@ router.get("/", async (req, res) => {
     appList = appIDs.split(",").map((id) => getAppByID(id));
   }
 
-  if (!domainBlocks.includes(server)) {
+  if (validateDomain(server) && !domainBlocks.includes(server)) {
     const serverInfo = await getServerInfo(server);
 
     // console.log(serverInfo);
