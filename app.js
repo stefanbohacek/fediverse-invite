@@ -89,7 +89,8 @@ app.use((req, res, next) => {
 app.use(i18n.init);
 
 app.use((req, res, next) => {
-  const currentLocale = req?.query?.lang || req.getLocale() || "en-us";
+  // const currentLocale = req?.query?.lang || req.getLocale() || "en-us";
+  const currentLocale = req?.query?.lang || "en-us";
 
   res.locals.languages = i18n.getLocales();
   res.translations = sortArrayOfObjects(translationData, "label_lat");
@@ -102,9 +103,9 @@ app.use((req, res, next) => {
     /* noop */
   }
 
-  res.cookie("locale", currentLocale, {
-    maxAge: 365 * 24 * 60 * 60 * 1000,
-  });
+  // res.cookie("locale", currentLocale, {
+  //   maxAge: 365 * 24 * 60 * 60 * 1000,
+  // });
   next();
 });
 

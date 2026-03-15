@@ -1,6 +1,8 @@
 import express from "express";
+import { linkifyUrlsToHtml } from "linkify-urls";
 import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
+import validateDomain from "../modules/validateDomain.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
 
@@ -14,8 +16,9 @@ const getAppByTag = (tag) =>
   apps.filter((app) => app.tags && app.tags.includes(tag));
 
 router.get("/", async (req, res) => {
-  const server = req.query.server ?? "mastodon.social";
+  const server = req.query.server?.trim().toLowerCase() ?? "mastodon.social";
   const appIDs = req.query.apps ?? "1,2,3,4";
+  const currentLocale = req.query.lang || "en-us";
 
   let appList = [];
 
@@ -31,7 +34,7 @@ router.get("/", async (req, res) => {
     appList = appIDs.split(",").map((id) => getAppByID(id));
   }
 
-  if (!domainBlocks.includes(server)) {
+  if (validateDomain(server) && !domainBlocks.includes(server)) {
     const serverInfo = await getServerInfo(server);
 
     // console.log(serverInfo);
@@ -48,23 +51,42 @@ router.get("/", async (req, res) => {
       }
     });
 
+    const serverDescription = linkifyUrlsToHtml(
+      serverInfo.nodeInfo.metadata.nodeDescription,
+      {
+        attributes: {
+          rel: "noreferrer",
+          target: "_blank",
+        },
+        value: (url) => {
+          const urlParsed = new URL(url);
+          return (
+            urlParsed.host +
+            urlParsed.pathname +
+            urlParsed.search +
+            urlParsed.hash
+          );
+        },
+      },
+    );
+
     try {
       res.render("../views/home.handlebars", {
         supported_languages: JSON.stringify(res.locals.languages),
         translations: res.translations,
-        current_locale: res.currentLocale,
+        current_locale: currentLocale,
         server_domain: serverInfo.domain,
         server_url: `https://${serverInfo.domain}`,
         server_name: serverInfo.nodeInfo.metadata.nodeName,
-        server_description: serverInfo.nodeInfo.metadata.nodeDescription,
+        server_description: serverDescription,
         server_thumbnail_url: serverInfo.instance_data?.thumbnail_url,
         server_icon_url: serverInfo.instance_data?.icon_url,
         server_contact_name: serverInfo.instance_data?.contact_name,
         server_contact_username: serverInfo.instance_data?.contact_username,
-        server_post_count: new Intl.NumberFormat("en-US", {
+        server_post_count: new Intl.NumberFormat(currentLocale, {
           notation: "compact",
         }).format(serverInfo.nodeInfo?.usage?.localPosts),
-        server_user_count: new Intl.NumberFormat("en-US", {
+        server_user_count: new Intl.NumberFormat(currentLocale, {
           notation: "compact",
         }).format(serverInfo.nodeInfo?.usage?.users.activeMonth),
         apps: appList,

@@ -8,7 +8,7 @@
       id="server-domain"
       placeholder="mastodon.social">
   </div>
-  <div class="mb-3">
+  <div>
     <label for="app-ids"
       class="form-label">Apps</label>
     <input type="text"
@@ -16,11 +16,11 @@
       id="app-ids"
       placeholder="1,2,3,5">
   </div>
-  <div class="form-text">
+  <div class="form-text mb-3">
     <a href="https://github.com/stefanbohacek/fediverse-invite/blob/main/data/apps.json"
       target="_blank">See the full list</a>
   </div>
-  <div class="mb-3">
+  <div>
     <label for="starter-packs"
       class="form-label">Fedidevs starter packs</label>
     <input type="text"
@@ -28,19 +28,24 @@
       id="starter-packs"
       placeholder="NjQ5,ODI5,OTIw,ODY4">
   </div>
-  <div class="form-text">
+  <div class="form-text mb-3">
     <a href="https://fedidevs.com/starter-packs/"
       target="_blank">Browse starter packs</a>
   </div>
-  <div class="mb-3">
+  <div>
     <label for="language"
       class="form-label">Language</label>
-      <select id="language" class="form-select" aria-label="Default select example">
-        <option selected value="en-us">English (US)</option>
-        <option value="es-us">Español</option>
-      </select>
+    <select id="language"
+      class="form-select"
+      aria-label="Default select example">
+      <option selected
+        value="en-us">English (US)</option>
+      <option value="ca">Català</option>
+      <option value="es-us">Español</option>
+      <option value="pl">Polski</option>
+    </select>
   </div>
-  <div class="form-text">
+  <div class="form-text mb-3">
     <a href="https://github.com/stefanbohacek/fediverse-invite?tab=readme-ov-file#translation"
       target="_blank">Help with translations</a>
   </div>
@@ -51,6 +56,12 @@
       class="form-control"
       id="invitation-url"
       rows="3">https://invite.jointhefediverse.net/?lang=en-us</textarea>
+  </div>
+  <div class="mb-3">
+    <a id="invitation-link"
+      href="https://invite.jointhefediverse.net/?lang=en-us"
+      class="btn btn-primary"
+      target="_blank">Open link</a>
   </div>
 </form>
 
@@ -66,6 +77,7 @@
   const starterPacksInput = document.getElementById("starter-packs");
   const languageDropdown = document.getElementById("language");
   const invitationURLField = document.getElementById("invitation-url");
+  const invitationURLBtn = document.getElementById("invitation-link");
 
   const updateLink = () => {
     try {
@@ -80,20 +92,20 @@
       if (server?.length) params.set("server", server);
       if (apps?.length) params.set("apps", apps);
       if (starterpacks?.length) params.set("starterpacks", starterpacks);
+
       params.set("lang", language);
 
       const queryString = params.toString().replaceAll("%2C", ",");
+      const invitationURL = queryString.length ? `${baseURL}?${queryString}` : baseURL;
 
       if (invitationURLField) {
-        invitationURLField.value = queryString.length
-          ? `${baseURL}?${queryString}`
-          : baseURL;
+        invitationURLField.value = invitationURL;
+      }
+      if (invitationURLBtn) {
+        invitationURLBtn.href = invitationURL;
       }
     } catch (err) {
-      console.error("Link builder: failed to build invitation URL.", err);
-      if (invitationURLField) {
-        invitationURLField.value = "";
-      }
+      // noop
     }
   };
 
