@@ -36,6 +36,9 @@ router.get("/", async (req, res) => {
 
   if (validateDomain(server) && !domainBlocks.includes(server)) {
     const serverInfo = await getServerInfo(server);
+    const recommendText = res
+      .__("home_recommend")
+      .replace(/#SERVER_DOMAIN#/g, server);
 
     // console.log(serverInfo);
 
@@ -89,6 +92,7 @@ router.get("/", async (req, res) => {
         server_user_count: new Intl.NumberFormat(currentLocale, {
           notation: "compact",
         }).format(serverInfo.nodeInfo?.usage?.users.activeMonth),
+        recommend: recommendText,
         apps: appList,
         show_one_app: appList.length === 1,
         footer_scripts: process.env.FOOTER_SCRIPTS,

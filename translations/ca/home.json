@@ -8,7 +8,5 @@
   "cta_secondary": "Troba'n una altra",
   "intro_apps_single": "I aquí tens una gran aplicació que pots utilitzar.",
   "intro_apps_multiple": "I aquí tens només algunes de les moltes aplicacions que pots utilitzar.",
-  "popular_accounts_description": "Vols trobar més persones a qui seguir? Dona un cop d’ull a alguns dels",
-  "popular_accounts_link_title": "comptes populars",
-  "starter_packs_link_title": "i paquets d’inici"
+  "recommend": "Vols trobar més persones a qui seguir? Dona un cop d’ull a alguns dels <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>comptes populars</a> i <a href='https://fedidevs.com/starter-packs/'>paquets d’inici</a>."
 }

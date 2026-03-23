@@ -8,7 +8,5 @@
   "cta_secondary": "Encontrar otra comunidad",
   "intro_apps_single": "Y aquí tienes una aplicación estupenda que puedes usar.",
   "intro_apps_multiple": "Y estas son solo algunas de las muchas aplicaciones que puedes utilizar.",
-  "popular_accounts_description": "¿Quieres encontrar más gente a la que seguir? Echa un vistazo a algunas de las",
-  "popular_accounts_link_title": "cuentas populares",
-  "starter_packs_link_title": "y packs de inicio"
+  "recommend": "¿Quieres encontrar más gente a la que seguir? Echa un vistazo a algunas de las <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>cuentas populares</a> y <a href='https://fedidevs.com/starter-packs/'>packs de inicio</a>."
 }
