@@ -1,0 +1,14 @@
+{
+  "intro_title": "Rejoignez le fédivers !",
+  "intro_description": "Le fédivers est composé de <a href='https://jointhefediverse.net/join?lang=fr'>nombreuses communautés et platformes</a>, qui collaborent au lieu d'entrer en compétition. Vous pouvez rejoindre n'importe laquelle pour suivre et intéragir avec tout le monde depuis un unique compte.",
+  "intro_community": "Voici l'une de ces communautés.",
+  "intro_community_post_count_label_plural": "publications",
+  "intro_community_user_count_label_plural": "utilisateurs actifs",
+  "cta_sign_up": "Explorer et s'inscrire",
+  "cta_secondary": "En chercher une autre",
+  "intro_apps_single": "Et voici une application pertinente à utiliser.",
+  "intro_apps_multiple": "Et voici quelques-unes des nombreuses applications que vous pouvez utiliser.",
+  "popular_accounts_description": "Vous souhaitez trouver plus de personnes à suivre ? Consultez quelques-uns des",
+  "popular_accounts_link_title": "comptes populaires",
+  "starter_packs_link_title": "et starter packs"
+}
