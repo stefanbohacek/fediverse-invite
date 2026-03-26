@@ -8,5 +8,5 @@
   "cta_secondary": "En chercher une autre",
   "intro_apps_single": "Et voici une application pertinente à utiliser.",
   "intro_apps_multiple": "Et voici quelques-unes des nombreuses applications que vous pouvez utiliser.",
-  "recommend": "Vous souhaitez trouver plus de personnes à suivre ? Consultez quelques-uns des <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>comptes populaires</a> and <a href='https://fedidevs.com/starter-packs/'>et starter packs</a>."
+  "recommend": "Vous souhaitez trouver plus de personnes à suivre ? Consultez quelques-uns des <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>comptes populaires</a> et <a href='https://fedidevs.com/starter-packs/'>et starter packs</a>."
 }
