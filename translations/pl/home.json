@@ -8,7 +8,7 @@
   "cta_secondary": "Znajdź inną",
   "intro_apps_single": "A tu jest świetna aplikacja, której możesz użyć.",
   "intro_apps_multiple": "A tu jest kilka z wielu aplikacji, których możesz użyć.",
-  "recommend": "Chcesz znaleźć więcej osób do obserwowania? Przejrzyj <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>popularne konta</a> i <a href='https://fedidevs.com/starter-packs/'>i pakiety startowe</a>.",
+  "recommend": "Chcesz znaleźć więcej osób do obserwowania? Przejrzyj <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>popularne konta</a>, <a href='https://fedidevs.com/starter-packs/'>pakiety startowe</a> oraz agencje prasowe i inne organizacje <a href='https://flipboard.com/directory?server=#SERVER_DOMAIN#'>publikujące na Flipboardzie</a>.",
   "popular_accounts_link_title": "",
   "starter_packs_link_title": ""
 }
