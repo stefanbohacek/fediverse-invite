@@ -2,6 +2,7 @@ import express from "express";
 import { linkifyUrlsToHtml } from "linkify-urls";
 import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
+import isHTML from "../modules/isHTML.js";
 import validateDomain from "../modules/validateDomain.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
@@ -54,24 +55,28 @@ router.get("/", async (req, res) => {
       }
     });
 
-    const serverDescription = linkifyUrlsToHtml(
-      serverInfo.nodeInfo.metadata.nodeDescription,
-      {
-        attributes: {
-          rel: "noreferrer",
-          target: "_blank",
+    let serverDescription = serverInfo.nodeInfo.metadata.nodeDescription;
+
+    if (!isHTML(serverDescription)) {
+      serverDescription = linkifyUrlsToHtml(
+        serverInfo.nodeInfo.metadata.nodeDescription,
+        {
+          attributes: {
+            rel: "noreferrer",
+            target: "_blank",
+          },
+          value: (url) => {
+            const urlParsed = new URL(url);
+            return (
+              urlParsed.host +
+              urlParsed.pathname +
+              urlParsed.search +
+              urlParsed.hash
+            );
+          },
         },
-        value: (url) => {
-          const urlParsed = new URL(url);
-          return (
-            urlParsed.host +
-            urlParsed.pathname +
-            urlParsed.search +
-            urlParsed.hash
-          );
-        },
-      },
-    );
+      );
+    }
 
     try {
       res.render("../views/home.handlebars", {
