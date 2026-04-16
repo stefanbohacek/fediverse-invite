@@ -14,8 +14,12 @@
         </p>
       </div>
       <div class="col-12 col-md-6 text-md-end pb-4 pb-md-0">
-        <span class="badge rounded-pill text-bg-info">{{server_post_count}} {{{__ "home_intro_community_post_count_label_plural"}}}</span>
-        <span class="badge rounded-pill text-bg-success">{{server_user_count}} {{{__ "home_intro_community_user_count_label_plural"}}}</span>
+        {{#if server_post_count}}
+          <span class="badge rounded-pill text-bg-info">{{server_post_count}} {{{__ "home_intro_community_post_count_label_plural"}}}</span>
+        {{/if}}
+        {{#if server_user_count}}
+          <span class="badge rounded-pill text-bg-success">{{server_user_count}} {{{__ "home_intro_community_user_count_label_plural"}}}</span>
+        {{/if}}
       </div>
       <div class="col-12">
         <p class="lead">

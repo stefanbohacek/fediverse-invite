@@ -86,12 +86,16 @@ router.get("/", async (req, res) => {
         server_icon_url: serverInfo.instance_data?.icon_url,
         server_contact_name: serverInfo.instance_data?.contact_name,
         server_contact_username: serverInfo.instance_data?.contact_username,
-        server_post_count: new Intl.NumberFormat(currentLocale, {
-          notation: "compact",
-        }).format(serverInfo.nodeInfo?.usage?.localPosts),
-        server_user_count: new Intl.NumberFormat(currentLocale, {
-          notation: "compact",
-        }).format(serverInfo.nodeInfo?.usage?.users.activeMonth),
+        server_post_count: serverInfo.nodeInfo?.usage?.localPosts
+          ? new Intl.NumberFormat(currentLocale, {
+              notation: "compact",
+            }).format(serverInfo.nodeInfo.usage.localPosts)
+          : null,
+        server_user_count: serverInfo.nodeInfo?.usage?.users?.activeMonth
+          ? new Intl.NumberFormat(currentLocale, {
+              notation: "compact",
+            }).format(serverInfo.nodeInfo.usage.users.activeMonth)
+          : null,
         recommend: recommendText,
         apps: appList,
         show_one_app: appList.length === 1,
