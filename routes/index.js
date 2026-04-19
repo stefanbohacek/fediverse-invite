@@ -85,7 +85,7 @@ router.get("/", async (req, res) => {
         current_locale: currentLocale,
         server_domain: serverInfo.domain,
         server_url: `https://${serverInfo.domain}`,
-        server_name: serverInfo?.nodeInfo?.metadata?.nodeName || serverInfo?.nodeInfo?.software?.name,
+        server_name: serverInfo?.nodeInfo?.metadata?.nodeName || server,
         server_description: serverDescription,
         server_thumbnail_url: serverInfo.instance_data?.thumbnail_url,
         server_icon_url: serverInfo.instance_data?.icon_url,
