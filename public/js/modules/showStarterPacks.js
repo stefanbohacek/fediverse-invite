@@ -15,12 +15,12 @@ export default async () => {
           <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-4">
             <div class="card h-100">
               <div class="card-body">
-                <span class="badge rounded-pill text-bg-info float-end fs-7">${starterPack.accounts.length.toLocaleString()} accounts</span>
+                <span class="badge rounded-pill text-bg-info float-end fs-7">${starterPack.accounts.length.toLocaleString()} ${window.translations.accounts}</span>
                 <h5 class="card-title">${starterPack.title}</h5>
                 <p class="card-text fs-5">${starterPack.description}</p>
               </div>
               <div class="card-footer bg-body border-0 pb-3">
-                <a href="${starterPack.url}" class="fs-6 btn btn-primary">Explore</a>
+                <a href="${starterPack.url}" class="fs-6 btn btn-primary">${window.translations.explore}</a>
               </div>
             </div>
           </div>        

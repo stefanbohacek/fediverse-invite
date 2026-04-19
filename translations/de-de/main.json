@@ -1,5 +1,7 @@
 {
   "site_title": "Komm ins Fediverse!",
   "site_description": "Deine Schnellstart-Einladung in die wundervolle Welt des Fediverse.",
-  "site_thumbnail_description": "Das Wort 'Fediverse' übersetzt in viele Sprachen, geschrieben in Grautönen auf dunklem Hintergrund."
+  "site_thumbnail_description": "Das Wort 'Fediverse' übersetzt in viele Sprachen, geschrieben in Grautönen auf dunklem Hintergrund.",
+  "starter_packs_accounts": "Konten",
+  "starter_packs_explore": "Erkunden"
 }

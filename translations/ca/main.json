@@ -1,5 +1,7 @@
 {
   "site_title": "Uneix-te al fedivers!",
   "site_description": "La teva invitació ràpida per començar al meravellós món del fedivers.",
-  "site_thumbnail_description": "La paraula 'fedivers' traduïda a múltiples llengües, escrita en tons de gris sobre un fons fosc."
+  "site_thumbnail_description": "La paraula 'fedivers' traduïda a múltiples llengües, escrita en tons de gris sobre un fons fosc.",
+  "starter_packs_accounts": "comptes",
+  "starter_packs_explore": "Explora"
 }

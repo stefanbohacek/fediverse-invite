@@ -1,5 +1,7 @@
 {
   "site_title": "Join the fediverse!",
   "site_description": "Your quick-start invitation to the wonderful world of the fediverse.",
-  "site_thumbnail_description": "The word 'fediverse' translated into multiple languages, written in shades of gray on a dark background."
+  "site_thumbnail_description": "The word 'fediverse' translated into multiple languages, written in shades of gray on a dark background.",
+  "starter_packs_accounts": "accounts",
+  "starter_packs_explore": "Explore"
 }
