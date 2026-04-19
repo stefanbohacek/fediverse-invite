@@ -1,0 +1,12 @@
+{
+  "intro_title": "Komm ins Fediverse!",
+  "intro_description": "Das Fediverse besteht aus <a href='https://jointhefediverse.net/join?lang=de-de'>vielen Communitys und Plattformen</a>, die alle zusammenarbeiten, anstatt zu konkurrieren. Du kannst jeder von ihnen beitreten und mit einem einzigen Konto allen folgen und mit allen interagieren.",
+  "intro_community": "Hier ist so eine Community.",
+  "intro_community_post_count_label_plural": "Beiträge",
+  "intro_community_user_count_label_plural": "Aktive Nutzer*innen",
+  "cta_sign_up": "Erkunden und Anmelden",
+  "cta_secondary": "Weitere finden",
+  "intro_apps_single": "Und hier ist eine großartige App, die Du nutzen kannst.",
+  "intro_apps_multiple": "Und hier sind ein paar der vielen Apps, die Du nutzen kannst.",
+  "recommend": "Du willst mehr Profile finden, denen Du folgen kannst? Dann schau Dir einige der <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>beliebtesten Profile</a> an, <a href='https://fedidevs.com/starter-packs/'>Startpakete</a>, sowie Nachrichtenagenturen und andere Organisationen, <a href='https://flipboard.com/directory?server=#SERVER_DOMAIN#'>die ihre Beiträge auf Flipboard veröffentlichen</a>."
+}

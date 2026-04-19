@@ -1,0 +1,13 @@
+{
+  "label": "Deutsch",
+  "label_lat": "deutsch",
+  "label_en": "German",
+  "lang_dir": "LTR",
+  "available": true,
+  "translators": [
+    {
+      "name": "Jan Tietje, Eckernförde, alias Sparfindig",
+      "url": "https://digitalcourage.social/@sparfindig"
+    }
+  ]
+}
