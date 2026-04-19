@@ -55,11 +55,11 @@ router.get("/", async (req, res) => {
       }
     });
 
-    let serverDescription = serverInfo.nodeInfo.metadata.nodeDescription;
+    let serverDescription = serverInfo.nodeInfo?.metadata?.nodeDescription;
 
     if (!isHTML(serverDescription)) {
       serverDescription = linkifyUrlsToHtml(
-        serverInfo.nodeInfo.metadata.nodeDescription,
+        serverInfo?.nodeInfo?.metadata?.nodeDescription,
         {
           attributes: {
             rel: "noreferrer",
@@ -85,7 +85,7 @@ router.get("/", async (req, res) => {
         current_locale: currentLocale,
         server_domain: serverInfo.domain,
         server_url: `https://${serverInfo.domain}`,
-        server_name: serverInfo.nodeInfo.metadata.nodeName,
+        server_name: serverInfo?.nodeInfo?.metadata?.nodeName || serverInfo?.nodeInfo?.software?.name,
         server_description: serverDescription,
         server_thumbnail_url: serverInfo.instance_data?.thumbnail_url,
         server_icon_url: serverInfo.instance_data?.icon_url,
