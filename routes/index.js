@@ -124,6 +124,9 @@ router.get("/", async (req, res) => {
         community_annual_reports: communityData?.annual_reports?.length
           ? communityData.annual_reports
           : null,
+        community_team: communityData?.team?.length
+          ? communityData.team
+          : null,
         recommend: recommendText,
         apps: appList,
         show_one_app: appList.length === 1,

@@ -203,7 +203,7 @@ a:focus {
 /* Admins and mods widget, from https://css-tricks.com/responsive-list-of-avatars-using-modern-css-part-1/ */
 
 .team-container {
-  --s: 30px;
+  --s: 48px;
   display: flex;
   margin: 10px 0;
   filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000)

@@ -71,6 +71,16 @@
       </div>
     </div>
   </div>
+  {{#if community_team}}
+  <div class="card-footer">
+    <p class="small text-body-secondary mb-1">{{{__ "home_community_moderation_team_label"}}}</p>
+    <div class="team-container reverse">
+      {{#each community_team}}
+      <img src="{{profile_image}}" alt="{{name}}">
+      {{/each}}
+    </div>
+  </div>
+  {{/if}}
 </div>
 <p class="lead mt-5">
   {{#if show_one_app}}
