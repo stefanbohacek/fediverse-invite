@@ -9,9 +9,9 @@
   "intro_apps_single": "I aquí tens una gran aplicació que pots utilitzar.",
   "intro_apps_multiple": "I aquí tens només algunes de les moltes aplicacions que pots utilitzar.",
   "recommend": "Vols trobar més persones a qui seguir? Dona un cop d’ull a alguns dels <a href=’https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#’>comptes populars</a> i <a href=’https://fedidevs.com/starter-packs/’>paquets d’inici</a>.",
-  "community_membership_label": "Membership:",
-  "community_year_label": "Created in",
-  "community_links_blog": "Community blog",
-  "community_links_moderation": "Moderation & rules",
-  "community_links_annual_reports": "View annual reports"
+  "community_membership_label": "Cost de la subscripció:",
+  "community_year_label": "Creat el",
+  "community_links_blog": "Bloc de la comunitat",
+  "community_links_moderation": "Moderació i normes",
+  "community_links_annual_reports": "Veure informes anuals"
 }
