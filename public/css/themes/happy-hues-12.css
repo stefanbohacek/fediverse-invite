@@ -1,0 +1,237 @@
+/* Adapted from Happy Hues: https://www.happyhues.co/palettes/12 */
+
+:root {
+  --hh-bg: #d4d8f0;
+  --hh-surface: #b8c1ec;
+  --hh-card-bg: #fffffe;
+  --hh-headline: #232946;
+  --hh-body: #232946;
+  --hh-accent: #ef4565;
+  --hh-accent-fg: #232946;
+  --hh-stroke: #121629;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hh-bg: #232946;
+    --hh-surface: #b8c1ec;
+    --hh-card-bg: color-mix(in srgb, var(--hh-surface) 8%, var(--hh-bg));
+    --hh-headline: #b8c1ec;
+    --hh-body: #b8c1ec;
+    --hh-accent: #eebbc3;
+    --hh-accent-fg: #232946;
+    --hh-stroke: #121629;
+  }
+}
+
+[data-bs-theme="dark"] {
+  --hh-bg: #232946;
+  --hh-surface: #b8c1ec;
+  --hh-card-bg: color-mix(in srgb, var(--hh-surface) 8%, var(--hh-bg));
+  --hh-headline: #b8c1ec;
+  --hh-body: #b8c1ec;
+  --hh-accent: #eebbc3;
+  --hh-accent-fg: #232946;
+  --hh-stroke: #121629;
+}
+
+/* Main styles */
+
+html,
+body {
+  background-color: var(--hh-bg);
+  color: var(--hh-body);
+  font-family:
+    Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-weight: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.fs-1,
+strong {
+  color: var(--hh-headline);
+}
+
+a,
+a:visited {
+  color: var(--hh-accent);
+  text-decoration-color: currentColor;
+}
+
+a.btn-primary:visited {
+  color: #fffffe;
+}
+
+@media (prefers-color-scheme: dark) {
+  a.btn-primary:visited {
+    color: var(--hh-accent-fg);
+  }
+}
+
+[data-bs-theme="dark"] a.btn-primary:visited {
+  color: var(--hh-accent-fg);
+}
+
+a:hover,
+a:focus {
+  color: var(--hh-headline);
+  text-decoration-color: var(--hh-headline);
+}
+
+#main {
+  color: var(--hh-body);
+}
+
+.card {
+  --bs-card-bg: var(--hh-card-bg);
+  --bs-card-cap-bg: var(--hh-card-bg);
+  --bs-card-border-color: color-mix(
+    in srgb,
+    var(--hh-surface) 50%,
+    transparent
+  );
+  --bs-card-color: var(--hh-body);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--hh-accent);
+  --bs-btn-border-color: var(--hh-accent);
+  color: var(--hh-accent);
+  --bs-btn-hover-color: #fffffe;
+  --bs-btn-hover-bg: var(--hh-accent);
+  --bs-btn-hover-border-color: var(--hh-accent);
+  --bs-btn-active-color: #fffffe;
+  --bs-btn-active-bg: var(--hh-accent);
+  --bs-btn-active-border-color: var(--hh-accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-outline-primary {
+    --bs-btn-hover-color: var(--hh-accent-fg);
+    --bs-btn-active-color: var(--hh-accent-fg);
+  }
+}
+
+[data-bs-theme="dark"] .btn-outline-primary {
+  --bs-btn-hover-color: var(--hh-accent-fg);
+  --bs-btn-active-color: var(--hh-accent-fg);
+}
+
+.btn-primary {
+  background-color: var(--hh-accent);
+  border-color: var(--hh-accent);
+  color: #fffffe;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-primary {
+    color: var(--hh-accent-fg);
+  }
+}
+
+[data-bs-theme="dark"] .btn-primary {
+  color: var(--hh-accent-fg);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: var(--hh-headline);
+  border-color: var(--hh-headline);
+  color: var(--hh-card-bg);
+}
+
+.badge.text-bg-info,
+.badge.bg-info {
+  background-color: var(--hh-surface) !important;
+  color: var(--hh-stroke) !important;
+}
+
+.badge.text-bg-success,
+.badge.bg-success {
+  background-color: var(--hh-accent) !important;
+  color: var(--hh-accent-fg) !important;
+}
+
+.badge.text-bg-secondary,
+.badge.bg-secondary {
+  background-color: var(--hh-stroke) !important;
+  color: var(--hh-surface) !important;
+}
+
+.badge.text-bg-dark,
+.badge.bg-dark {
+  background-color: var(--hh-stroke) !important;
+  color: var(--hh-surface) !important;
+}
+
+#back-to-top {
+  background-color: var(--hh-stroke);
+  border-color: var(--hh-stroke);
+  color: var(--hh-surface);
+  width: 10rem;
+  right: 0;
+  left: auto;
+  padding-left: 0 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .form-select,
+  .form-control,
+  .form-check-input,
+  select {
+    background-color: color-mix(in srgb, var(--hh-surface) 15%, var(--hh-bg));
+    border-color: color-mix(in srgb, var(--hh-surface) 30%, var(--hh-bg));
+    color: var(--hh-body);
+  }
+}
+
+[data-bs-theme="dark"] .form-select,
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-check-input,
+[data-bs-theme="dark"] select {
+  background-color: color-mix(in srgb, var(--hh-surface) 15%, var(--hh-bg));
+  border-color: color-mix(in srgb, var(--hh-surface) 30%, var(--hh-bg));
+  color: var(--hh-body);
+}
+
+/* Admins and mods widget, from https://css-tricks.com/responsive-list-of-avatars-using-modern-css-part-1/ */
+
+.team-container {
+  --s: 30px;
+  display: flex;
+  margin: 10px 0;
+  filter: drop-shadow(0 0 1px #000) drop-shadow(0 0 1px #000)
+    drop-shadow(0 0 1px #000);
+}
+.team-container img {
+  width: var(--s);
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.team-container:not(.reverse) img {
+  margin-right: -8px;
+  mask: radial-gradient(
+    50% 50% at calc(150% - 8px),
+    #0000 calc(100% - 9px),
+    #000 calc(100% - 8px)
+  );
+}
+.team-container.reverse img {
+  margin-left: -8px;
+  mask: radial-gradient(
+    50% 50% at calc(-50% + 8px),
+    #0000 calc(100% - 9px),
+    #000 calc(100% - 8px)
+  );
+}
+.team-container:not(.reverse) img:last-child,
+.team-container.reverse img:first-child {
+  mask: none;
+  margin: 0;
+}

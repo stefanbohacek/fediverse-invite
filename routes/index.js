@@ -7,6 +7,7 @@ import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
 import isHTML from "../modules/isHTML.js";
 import validateDomain from "../modules/validateDomain.js";
+import getThemeCSS from "../modules/getThemeCSS.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
 
@@ -31,6 +32,7 @@ router.get("/", async (req, res) => {
   const server = req.query.server?.trim().toLowerCase() ?? "mastodon.social";
   const appIDs = req.query.apps ?? "1,2,3,4";
   const currentLocale = req.query.lang || "en-us";
+  const themeCSS = getThemeCSS(req.query.theme);
 
   let appList = [];
 
@@ -92,6 +94,7 @@ router.get("/", async (req, res) => {
 
     try {
       res.render("../views/home.handlebars", {
+        theme_css_url: themeCSS,
         supported_languages: JSON.stringify(res.locals.languages),
         translations: res.translations,
         current_locale: currentLocale,

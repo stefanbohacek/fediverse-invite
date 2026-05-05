@@ -13,6 +13,9 @@
         href="/css/main.css">
     <link rel="stylesheet"
         href="/libs/bootstrap/5.3.8/css/bootstrap.min.css">
+    {{#if theme_css_url}}
+    <link rel="stylesheet" href="{{theme_css_url}}">
+    {{/if}}
     <meta property="og:title"
         content="{{{__ "main_site_title"}}}" />
     <meta name="description"
