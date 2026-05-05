@@ -8,5 +8,10 @@
   "cta_secondary": "Encontrar otra comunidad",
   "intro_apps_single": "Y aquí tienes una aplicación estupenda que puedes usar.",
   "intro_apps_multiple": "Y estas son solo algunas de las muchas aplicaciones que puedes utilizar.",
-  "recommend": "¿Quieres encontrar más gente a la que seguir? Echa un vistazo a algunas de las <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>cuentas populares</a> y <a href='https://fedidevs.com/starter-packs/'>packs de inicio</a>."
+  "recommend": "¿Quieres encontrar más gente a la que seguir? Echa un vistazo a algunas de las <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>cuentas populares</a> y <a href='https://fedidevs.com/starter-packs/'>packs de inicio</a>.",
+  "community_membership_label": "Membership:",
+  "community_year_label": "Created in",
+  "community_links_blog": "Community blog",
+  "community_links_moderation": "Moderation & rules",
+  "community_links_annual_reports": "View annual reports"
 }

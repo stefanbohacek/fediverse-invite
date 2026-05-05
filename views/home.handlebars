@@ -1,4 +1,4 @@
-<h1 class="mt-5">
+<h1 class="fw-bold mt-5">
   {{{__ "home_intro_title"}}}
 </h1>
 <p class="lead mt-5">
@@ -14,6 +14,11 @@
         </p>
       </div>
       <div class="col-12 col-md-6 text-md-end pb-4 pb-md-0">
+        {{#if community_has_metadata}}
+          {{#if community_year}}
+            <span class="badge rounded-pill text-bg-secondary">{{{__ "home_community_year_label"}}} {{community_year}}</span>
+          {{/if}}
+        {{/if}}
         {{#if server_post_count}}
           <span class="badge rounded-pill text-bg-info">{{server_post_count}} {{{__ "home_intro_community_post_count_label_plural"}}}</span>
         {{/if}}
@@ -25,12 +30,44 @@
         <p class="lead">
           {{{server_description}}}
         </p>
-        <p class="mt-5">
+        {{#if community_has_metadata}}
+        {{#if community_membership_cost}}
+        <p><strong>{{{__ "home_community_membership_label"}}}</strong> {{community_membership_cost}}</p>
+        {{/if}}
+        <ul class="d-flex flex-column gap-2 mt-3 mb-3">
+          <li>
+            <a href="{{server_url}}" rel="noreferrer" target="_blank">{{{__ "home_cta_sign_up"}}}</a>
+          </li>
+          {{#if community_blog_url}}
+          <li>
+            <a href="{{community_blog_url}}" rel="noreferrer" target="_blank">{{{__ "home_community_links_blog"}}}</a>
+          </li>
+          {{/if}}
+          {{#if community_moderation_url}}
+          <li>
+            <a href="{{community_moderation_url}}" rel="noreferrer" target="_blank">{{{__ "home_community_links_moderation"}}}</a>
+          </li>
+          {{/if}}
+          {{#if community_annual_reports}}
+          <li>
+            <select id="annual-reports">
+              <option value="">{{{__ "home_community_links_annual_reports"}}}</option>
+              {{#each community_annual_reports}}
+              <option value="{{url}}">{{year}}</option>
+              {{/each}}
+            </select>
+          </li>
+          {{/if}}
+        </ul>
+        <!-- <a href="https://fedidb.com/welcome">{{{__ "home_cta_secondary"}}}</a> -->
+        {{else}}
+        <p class="mt-4">
           <a class="btn btn-primary mb-3"
             href="{{server_url}}">{{{__ "home_cta_sign_up"}}}</a>
           <a class="btn btn-outline-primary mb-3"
             href="https://fedidb.com/welcome">{{{__ "home_cta_secondary"}}}</a>
         </p>
+        {{/if}}
       </div>
     </div>
   </div>

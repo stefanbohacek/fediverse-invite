@@ -1,0 +1,15 @@
+{
+  "domain": "social.lol",
+  "name": "social.lol",
+  "year": 2022,
+  "visible": true,
+  "membership_cost": "$20/year",
+  "links": {
+    "explore_and_join": "https://social.lol/",
+    "community_blog": null,
+    "moderation": null,
+    "learn_more": "https://home.omg.lol/"
+  },
+  "annual_reports": [],
+  "team": []
+}

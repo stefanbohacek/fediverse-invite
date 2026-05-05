@@ -1,0 +1,17 @@
+{
+  "domain": "techhub.social",
+  "name": "TechHub",
+  "year": 2020,
+  "visible": true,
+  "membership_cost": null,
+  "links": {
+    "explore_and_join": "https://techhub.social",
+    "community_blog": null,
+    "moderation": null,
+    "learn_more": null
+  },
+  "annual_reports": [
+    { "year": 2025, "url": "https://hub.techhub.social/finances/" }
+  ],
+  "team": []
+}

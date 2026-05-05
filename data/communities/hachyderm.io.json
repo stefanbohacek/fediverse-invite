@@ -1,0 +1,20 @@
+{
+  "domain": "hachyderm.io",
+  "name": "Hachyderm.io",
+  "year": 2022,
+  "visible": true,
+  "membership_cost": null,
+  "links": {
+    "explore_and_join": "https://hachyderm.io/explore",
+    "community_blog": "https://community.hachyderm.io/blog/",
+    "moderation": "https://community.hachyderm.io/docs/moderation/",
+    "learn_more": null
+  },
+  "annual_reports": [
+    {
+      "year": 2024,
+      "url": "https://nivenly.org/blog/2024/12/31/nivenlys-2024-financial-report/"
+    }
+  ],
+  "team": []
+}

@@ -1,0 +1,33 @@
+{
+  "domain": "mastodon.social",
+  "name": "Mastodon.social",
+  "year": 2016,
+  "visible": true,
+  "membership_cost": null,
+  "links": {
+    "explore_and_join": "https://mastodon.social/",
+    "community_blog": "https://blog.joinmastodon.org/",
+    "moderation": "https://mastodon.social/about",
+    "learn_more": null
+  },
+  "annual_reports": [
+    {
+      "year": 2025,
+      "url": "https://blog.joinmastodon.org/2025/06/mastodon-2025/"
+    },
+    {
+      "year": 2024,
+      "url": "https://joinmastodon.org/reports/Mastodon%20Annual%20Report%202024.pdf"
+    },
+    {
+      "year": 2023,
+      "url": "https://joinmastodon.org/reports/Mastodon%20Annual%20Report%202023.pdf"
+    }
+  ],
+  "team": [],
+  "team_example": [
+    { "name": "Alice", "profile_image": "https://i.pravatar.cc/150?img=1" },
+    { "name": "Bob", "profile_image": "https://i.pravatar.cc/150?img=2" },
+    { "name": "Carol", "profile_image": "https://i.pravatar.cc/150?img=3" }
+  ]
+}

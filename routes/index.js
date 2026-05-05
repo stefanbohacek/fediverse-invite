@@ -1,4 +1,7 @@
 import express from "express";
+import { readdirSync, readFileSync } from "fs";
+import { join } from "path";
+import { fileURLToPath } from "url";
 import { linkifyUrlsToHtml } from "linkify-urls";
 import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
@@ -6,6 +9,14 @@ import isHTML from "../modules/isHTML.js";
 import validateDomain from "../modules/validateDomain.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
+
+const communitiesPath = join(fileURLToPath(new URL("../data/communities", import.meta.url)));
+const communities = {};
+for (const file of readdirSync(communitiesPath)) {
+  if (file.endsWith(".json")) {
+    communities[file.slice(0, -5)] = JSON.parse(readFileSync(join(communitiesPath, file), "utf8"));
+  }
+}
 
 const router = express.Router();
 
@@ -36,6 +47,7 @@ router.get("/", async (req, res) => {
   }
 
   if (validateDomain(server) && !domainBlocks.includes(server)) {
+    const communityData = communities[server];
     const serverInfo = await getServerInfo(server);
     const recommendText = res
       .__("home_recommend")
@@ -100,6 +112,14 @@ router.get("/", async (req, res) => {
           ? new Intl.NumberFormat(currentLocale, {
               notation: "compact",
             }).format(serverInfo.nodeInfo.usage.users.activeMonth)
+          : null,
+        community_has_metadata: !!(communityData?.visible),
+        community_year: communityData?.year ?? null,
+        community_membership_cost: communityData?.membership_cost ?? null,
+        community_blog_url: communityData?.links?.community_blog ?? null,
+        community_moderation_url: communityData?.links?.moderation ?? null,
+        community_annual_reports: communityData?.annual_reports?.length
+          ? communityData.annual_reports
           : null,
         recommend: recommendText,
         apps: appList,

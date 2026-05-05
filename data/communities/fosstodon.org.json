@@ -1,0 +1,20 @@
+{
+  "domain": "fosstodon.org",
+  "name": "Fosstodon",
+  "year": 2018,
+  "visible": true,
+  "membership_cost": null,
+  "links": {
+    "explore_and_join": "https://fosstodon.org",
+    "community_blog": null,
+    "moderation": null,
+    "learn_more": null
+  },
+  "annual_reports": [
+    {
+      "year": 2022,
+      "url": "https://hub.fosstodon.org/more-upgrades-twitter-storm/"
+    }
+  ],
+  "team": []
+}

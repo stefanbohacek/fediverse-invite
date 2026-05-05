@@ -10,5 +10,10 @@
   "intro_apps_multiple": "A tu jest kilka z wielu aplikacji, których możesz użyć.",
   "recommend": "Chcesz znaleźć więcej osób do obserwowania? Przejrzyj <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>popularne konta</a>, <a href='https://fedidevs.com/starter-packs/'>pakiety startowe</a> oraz agencje prasowe i inne organizacje <a href='https://flipboard.com/directory?server=#SERVER_DOMAIN#'>publikujące na Flipboardzie</a>.",
   "popular_accounts_link_title": "",
-  "starter_packs_link_title": ""
+  "starter_packs_link_title": "",
+  "community_membership_label": "Membership:",
+  "community_year_label": "Created in",
+  "community_links_blog": "Community blog",
+  "community_links_moderation": "Moderation & rules",
+  "community_links_annual_reports": "View annual reports"
 }

@@ -5,8 +5,13 @@
   "intro_community_post_count_label_plural": "posts",
   "intro_community_user_count_label_plural": "active users",
   "cta_sign_up": "Explore and sign up",
-  "cta_secondary": "Find another one",
+  "cta_secondary": "Find another community",
   "intro_apps_single": "And here is a great app you can use.",
   "intro_apps_multiple": "And here are just a few of the many apps that you can use.",
-  "recommend": "Want to find more people to follow? Check out some of the <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>popular accounts</a>, <a href='https://fedidevs.com/starter-packs/'>starter packs</a>, and news outlets and other organizations <a href='https://flipboard.com/directory?server=#SERVER_DOMAIN#'>posting on Flipboard</a>."
+  "recommend": "Want to find more people to follow? Check out some of the <a href='https://most-followed-mastodon-accounts.stefanhayden.com/?server=#SERVER_DOMAIN#'>popular accounts</a>, <a href='https://fedidevs.com/starter-packs/'>starter packs</a>, and news outlets and other organizations <a href='https://flipboard.com/directory?server=#SERVER_DOMAIN#'>posting on Flipboard</a>.",
+  "community_membership_label": "Membership:",
+  "community_year_label": "Created in",
+  "community_links_blog": "Community blog",
+  "community_links_moderation": "Moderation & rules",
+  "community_links_annual_reports": "View annual reports"
 }
