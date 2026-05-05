@@ -1,0 +1,53 @@
+{
+  "domain": "toot.wales",
+  "name": "Tŵt Cymru | Toot Wales",
+  "year": 2018,
+  "visible": true,
+  "membership_cost": null,
+  "links": {
+    "explore_and_join": "https://toot.wales/",
+    "community_blog": "https://croeso.toot.wales/en/blog/",
+    "moderation": "https://croeso.toot.wales/en/policies/",
+    "learn_more": "https://croeso.toot.wales/"
+  },
+  "annual_reports": [
+    {
+      "year": 2025,
+      "url": "https://opencollective.com/twt-cymru"
+    }
+  ],
+  "team_example": [
+    {
+      "name": "Tîm Tŵt",
+      "profile_image": "https://toot.wales/system/accounts/avatars/109/429/324/912/042/582/original/126eaf13de5905cb.png"
+    },
+    {
+      "name": "alexisbushnell",
+      "profile_image": "https://toot.wales/system/accounts/avatars/109/313/667/595/858/120/original/32dc726b0e43a2e4.png"
+    },
+    {
+      "name": "davidoclubb",
+      "profile_image": "https://toot.wales/system/accounts/avatars/000/004/559/original/b6b4d6ab95cd38bc.jpg"
+    },
+    {
+      "name": "gomez",
+      "profile_image": "https://toot.wales/system/accounts/avatars/000/009/181/original/9338IMG_20181214_114300.jpg"
+    },
+    {
+      "name": "jaz",
+      "profile_image": "https://toot.wales/system/accounts/avatars/000/000/001/original/98b659942a677e55.png"
+    },
+    {
+      "name": "lexicaleigh",
+      "profile_image": "https://toot.wales/system/accounts/avatars/109/291/314/764/586/059/original/388692a33fbe6a31.png"
+    },
+    {
+      "name": "seddon",
+      "profile_image": "https://toot.wales/system/accounts/avatars/109/343/456/872/313/171/original/97a38cc9894398e8.jpg"
+    },
+    {
+      "name": "TCMuffin",
+      "profile_image": "https://toot.wales/system/accounts/avatars/109/308/553/204/725/198/original/8cbd0f7ce78177ec.jpg"
+    }
+  ]
+}
