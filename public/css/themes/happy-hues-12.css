@@ -12,7 +12,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-bs-theme="light"]) {
     --hh-bg: #232946;
     --hh-surface: #b8c1ec;
     --hh-card-bg: color-mix(in srgb, var(--hh-surface) 8%, var(--hh-bg));
@@ -68,7 +68,7 @@ a.btn-primary:visited {
 }
 
 @media (prefers-color-scheme: dark) {
-  a.btn-primary:visited {
+  :root:not([data-bs-theme="light"]) a.btn-primary:visited {
     color: var(--hh-accent-fg);
   }
 }
@@ -111,7 +111,7 @@ a:focus {
 }
 
 @media (prefers-color-scheme: dark) {
-  .btn-outline-primary {
+  :root:not([data-bs-theme="light"]) .btn-outline-primary {
     --bs-btn-hover-color: var(--hh-accent-fg);
     --bs-btn-active-color: var(--hh-accent-fg);
   }
@@ -129,7 +129,7 @@ a:focus {
 }
 
 @media (prefers-color-scheme: dark) {
-  .btn-primary {
+  :root:not([data-bs-theme="light"]) .btn-primary {
     color: var(--hh-accent-fg);
   }
 }
@@ -181,10 +181,10 @@ a:focus {
 }
 
 @media (prefers-color-scheme: dark) {
-  .form-select,
-  .form-control,
-  .form-check-input,
-  select {
+  :root:not([data-bs-theme="light"]) .form-select,
+  :root:not([data-bs-theme="light"]) .form-control,
+  :root:not([data-bs-theme="light"]) .form-check-input,
+  :root:not([data-bs-theme="light"]) select {
     background-color: color-mix(in srgb, var(--hh-surface) 15%, var(--hh-bg));
     border-color: color-mix(in srgb, var(--hh-surface) 30%, var(--hh-bg));
     color: var(--hh-body);
