@@ -5,10 +5,9 @@
   "visible": true,
   "membership_cost": null,
   "links": {
-    "explore_and_join": "https://toot.wales/",
+    "explore_and_join": "https://croeso.toot.wales/",
     "community_blog": "https://croeso.toot.wales/en/blog/",
-    "moderation": "https://croeso.toot.wales/en/policies/",
-    "learn_more": "https://croeso.toot.wales/"
+    "moderation": "https://croeso.toot.wales/en/policies/"
   },
   "annual_reports": [
     {
