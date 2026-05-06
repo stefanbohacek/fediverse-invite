@@ -1,1 +1,1 @@
-export default (str) => RegExp.prototype.test.bind(/(<([^>]+)>)/i);
+export default (str) => /(<([^>]+)>)/i.test(str);

@@ -1,7 +1,25 @@
 import express from "express";
+import { linkifyUrlsToHtml } from "linkify-urls";
 import getStarterPackData from "../modules/getStarterPackData.js";
+import isHTML from "../modules/isHTML.js";
 
 const router = express.Router();
+
+const linkifyOptions = {
+  attributes: {
+    rel: "noreferrer",
+    target: "_blank",
+  },
+  value: (url) => {
+    const urlParsed = new URL(url);
+    return (
+      urlParsed.host +
+      urlParsed.pathname +
+      urlParsed.search +
+      urlParsed.hash
+    );
+  },
+};
 
 router.get("/", async (req, res) => {
   let starterPackData = [];
@@ -20,6 +38,13 @@ router.get("/", async (req, res) => {
       }
     }
   }
+
+  starterPackData = starterPackData.map((pack) => {
+    if (pack?.description && !isHTML(pack.description)) {
+      return { ...pack, description: linkifyUrlsToHtml(pack.description, linkifyOptions) };
+    }
+    return pack;
+  });
 
   res.json(starterPackData);
 });
