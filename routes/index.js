@@ -117,6 +117,7 @@ router.get("/", async (req, res) => {
             }).format(serverInfo.nodeInfo.usage.users.activeMonth)
           : null,
         community_has_metadata: !!(communityData?.visible),
+        community_explore_url: communityData?.links?.explore_and_join ?? `https://${serverInfo.domain}`,
         community_year: communityData?.year ?? null,
         community_membership_cost: communityData?.membership_cost ?? null,
         community_blog_url: communityData?.links?.community_blog ?? null,
