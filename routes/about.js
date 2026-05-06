@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
         supported_languages: JSON.stringify(res.locals.languages),
         translations: res.translations,
         current_locale: res.currentLocale,
-        footer_scripts: process.env.FOOTER_SCRIPTS
+        footer_scripts: process.env.FOOTER_SCRIPTS,
+        show_home_link: true
     });
 });
 
