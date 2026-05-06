@@ -19,7 +19,7 @@ export default async () => {
                 <h5 class="card-title">${starterPack.title}</h5>
                 <p class="card-text fs-5">${starterPack.description}</p>
               </div>
-              <div class="card-footer bg-body border-0 pb-3">
+              <div class="card-footer border-0 pb-3">
                 <a href="${starterPack.url}" class="fs-6 btn btn-primary">${window.translations.explore}</a>
               </div>
             </div>
