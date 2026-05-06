@@ -7,7 +7,7 @@ router.get("/", async (req, res) => {
   let starterPackData = [];
 
   if (req.query.ids) {
-    const starterPackIDs = req.query.ids.split(",").slice(0, 4);
+    const starterPackIDs = req.query.ids.split(",").slice(0, 8);
 
     if (starterPackIDs && starterPackIDs.length) {
       try {
