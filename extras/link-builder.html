@@ -73,6 +73,9 @@
           href="https://invite.jointhefediverse.net/?lang=en-us"
           class="btn btn-primary"
           target="_blank">Open link</a>
+        <button id="copy-link"
+          type="button"
+          class="btn btn-outline-secondary">Copy link</button>
       </div>
     </div>
     <div class="col-12 col-md-3">
@@ -136,4 +139,18 @@
   [serverDomainInput, appIDsInput, starterPacksInput, languageDropdown].forEach((input) => {
     input?.addEventListener("input", updateLink);
   });
+
+  const copyLinkBtn = document.getElementById("copy-link");
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(invitationURLField.value).then(() => {
+        const label = copyLinkBtn.innerHTML;
+        copyLinkBtn.innerHTML = "Copied!";
+        setTimeout(() => {
+          copyLinkBtn.innerHTML = label;
+        }, 1000);
+      });
+    });
+  }
+
 </script>
