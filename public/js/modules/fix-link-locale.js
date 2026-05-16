@@ -1,12 +1,12 @@
-import { getUrlParam } from "./urlParams.js";
-
 export default () => {
-  const langParam = getUrlParam("lang");
-  if (langParam) {
-    document.querySelectorAll("a:not([href^='http'])").forEach((link) => {
-      const url = new URL(link.href);
-      url.searchParams.set("lang", langParam);
-      link.href = url.toString();
+  const currentParams = new URLSearchParams(window.location.search);
+  if (currentParams.size === 0) return;
+
+  document.querySelectorAll("a:not([href^='http'])").forEach((link) => {
+    const url = new URL(link.href);
+    currentParams.forEach((value, key) => {
+      url.searchParams.set(key, value);
     });
-  }
+    link.href = url.toString();
+  });
 };
