@@ -69,9 +69,9 @@ router.get("/", async (req, res) => {
       }
     });
 
-    let serverDescription = serverInfo.nodeInfo?.metadata?.nodeDescription;
+    let serverDescription = serverInfo?.nodeInfo?.metadata?.nodeDescription;
 
-    if (!isHTML(serverDescription)) {
+    if (serverDescription && !isHTML(serverDescription)) {
       serverDescription = linkifyUrlsToHtml(
         serverInfo?.nodeInfo?.metadata?.nodeDescription,
         {
