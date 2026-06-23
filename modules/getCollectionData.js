@@ -36,11 +36,17 @@ export default async (server, id) => {
       return collectionData;
     }
 
-    const { name, description, url, item_count, account_id } = json.collection;
+    const { name, description, item_count, account_id } = json.collection;
     const creatorAccount = json.accounts?.find((a) => a.id === account_id);
     const creator =
       creatorAccount?.display_name || creatorAccount?.acct || null;
-    collectionData = { name, description, url, item_count, creator };
+    collectionData = {
+      name,
+      description,
+      url: `https://${server}/collections/${id}`,
+      item_count,
+      creator,
+    };
 
     await fs.mkdir("data/collections", { recursive: true });
     await fs.writeFile(cacheFile, JSON.stringify(collectionData), "utf-8");
