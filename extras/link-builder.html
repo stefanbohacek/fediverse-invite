@@ -1,81 +1,58 @@
-<script type="text/javascript"
-  src="https://stefanbohacek.com/wp-content/themes/fourtonfish/libs/qrcodejs/qrcode.min.js"></script>
+<script type="text/javascript" src="https://stefanbohacek.com/wp-content/themes/fourtonfish/libs/qrcodejs/qrcode.min.js"></script>
 
 <form id="link-builder">
   <div class="mb-3">
-    <label for="server-domain"
-      class="form-label">Your server</label>
-    <input type="text"
-      class="form-control"
-      id="server-domain"
-      placeholder="mastodon.social">
+    <label for="server-domain" class="form-label">Your server</label>
+    <input type="text" class="form-control" id="server-domain" placeholder="mastodon.social">
   </div>
   <div class="form-text mb-3">
     Without <code>https://</code>.
   </div>
   <div>
-    <label for="app-ids"
-      class="form-label">Apps</label>
-    <input type="text"
-      class="form-control"
-      id="app-ids"
-      placeholder="1,2,3,5">
+    <label for="app-ids" class="form-label">Apps</label>
+    <input type="text" class="form-control" id="app-ids" placeholder="1,2,3,5">
   </div>
   <div class="form-text mb-3">
-    <a href="https://github.com/stefanbohacek/fediverse-invite/blob/main/data/apps.json"
-      target="_blank">See the full list</a>
+    <a href="https://github.com/stefanbohacek/fediverse-invite/blob/main/data/apps.json" target="_blank">See the full list</a>
   </div>
   <div>
-    <label for="starter-packs"
-      class="form-label">Fedidevs starter packs</label>
-    <input type="text"
-      class="form-control"
-      id="starter-packs"
-      placeholder="NjQ5,ODI5,OTIw,ODY4">
+    <label for="collections" class="form-label">Collections</label>
+    <input type="text" class="form-control" id="collections" placeholder="116688618583087767,116688638329681621">
   </div>
   <div class="form-text mb-3">
-    <a href="https://fedidevs.com/starter-packs/"
-      target="_blank">Browse starter packs</a> Maximum of eight will be shown.
+    Collection IDs from your server. Maximum of eight will be shown.
   </div>
   <div>
-    <label for="language"
-      class="form-label">Language</label>
-    <select id="language"
-      class="form-select"
-      aria-label="Default select example">
+    <label for="starter-packs" class="form-label">Fedidevs starter packs</label>
+    <input type="text" class="form-control" id="starter-packs" placeholder="NjQ5,ODI5,OTIw,ODY4">
+  </div>
+  <div class="form-text mb-3">
+    <a href="https://fedidevs.com/starter-packs/" target="_blank">Browse starter packs</a> Maximum of eight will be shown.
+  </div>
+  <div>
+    <label for="language" class="form-label">Language</label>
+    <select id="language" class="form-select" aria-label="Default select example">
       <option value="ca">Català</option>
       <option value="de-de">Deutsch (DE)</option>
-      <option selected
-        value="en-us">English (US)</option>
+      <option selected="" value="en-us">English (US)</option>
       <option value="es-us">Español</option>
       <option value="fr">Français</option>
       <option value="pl">Polski</option>
     </select>
   </div>
   <div class="form-text mb-3">
-    <a href="https://github.com/stefanbohacek/fediverse-invite?tab=readme-ov-file#translation"
-      target="_blank">Help with translations</a> (<a href="https://invite.jointhefediverse.net/about?lang=en-us"
-      target="_blank">See all contributors</a>)
+    <a href="https://github.com/stefanbohacek/fediverse-invite?tab=readme-ov-file#translation" target="_blank">Help with translations</a> (<a href="https://invite.jointhefediverse.net/about?lang=en-us" target="_blank">See all contributors</a>)
   </div>
 
   <div class="row">
     <div class="col-12 col-md-9">
       <div class="mb-3">
-        <label for="invitation-url"
-          class="form-label">Your invitation link</label>
-        <textarea disabled
-          class="form-control"
-          id="invitation-url"
-          rows="3">https://invite.jointhefediverse.net/?lang=en-us</textarea>
+        <label for="invitation-url" class="form-label">Your invitation link</label>
+        <textarea disabled="" class="form-control" id="invitation-url" rows="3">https://invite.jointhefediverse.net/?lang=en-us</textarea>
       </div>
       <div class="mb-3">
-        <a id="invitation-link"
-          href="https://invite.jointhefediverse.net/?lang=en-us"
-          class="btn btn-primary"
-          target="_blank">Open link</a>
-        <button id="copy-link"
-          type="button"
-          class="btn btn-outline-secondary">Copy link</button>
+        <a id="invitation-link" href="https://invite.jointhefediverse.net/?lang=en-us" class="btn btn-primary" target="_blank">Open link</a>
+        <button id="copy-link" type="button" class="btn btn-outline-secondary">Copy link</button>
       </div>
     </div>
     <div class="col-12 col-md-3">
@@ -97,6 +74,7 @@
 
   const serverDomainInput = document.getElementById("server-domain");
   const appIDsInput = document.getElementById("app-ids");
+  const collectionsInput = document.getElementById("collections");
   const starterPacksInput = document.getElementById("starter-packs");
   const languageDropdown = document.getElementById("language");
   const invitationURLField = document.getElementById("invitation-url");
@@ -111,11 +89,13 @@
 
       const server = serverDomainInput?.value.trim();
       const apps = appIDsInput?.value.trim();
+      const collections = collectionsInput?.value.trim();
       const starterpacks = starterPacksInput?.value.trim();
       const language = languageDropdown?.value.trim() || "en-us";
 
       if (server?.length) params.set("server", server);
       if (apps?.length) params.set("apps", apps);
+      if (collections?.length) params.set("collections", collections);
       if (starterpacks?.length) params.set("starterpacks", starterpacks);
 
       params.set("lang", language);
@@ -137,7 +117,7 @@
     }
   };
 
-  [serverDomainInput, appIDsInput, starterPacksInput, languageDropdown].forEach((input) => {
+  [serverDomainInput, appIDsInput, collectionsInput, starterPacksInput, languageDropdown].forEach((input) => {
     input?.addEventListener("input", updateLink);
   });
 
@@ -153,4 +133,5 @@
       });
     });
   }
+
 </script>
