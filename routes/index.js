@@ -81,13 +81,17 @@ router.get("/", async (req, res) => {
           },
           format: (value, type) => {
             if (type === "url") {
-              const urlParsed = new URL(value);
-              return (
-                urlParsed.host +
-                urlParsed.pathname +
-                urlParsed.search +
-                urlParsed.hash
-              ).replace(/\/$/, "");
+              try {
+                const urlParsed = new URL(value);
+                return (
+                  urlParsed.host +
+                  urlParsed.pathname +
+                  urlParsed.search +
+                  urlParsed.hash
+                ).replace(/\/$/, "");
+              } catch {
+                return value;
+              }
             }
             return value;
           },
