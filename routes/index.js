@@ -2,7 +2,7 @@ import express from "express";
 import { readdirSync, readFileSync } from "fs";
 import { join } from "path";
 import { fileURLToPath } from "url";
-import { linkifyUrlsToHtml } from "linkify-urls";
+import linkifyHtml from "linkify-html";
 import getServerInfo from "../modules/getServerInfo.js";
 import slugify from "../modules/slugify.js";
 import isHTML from "../modules/isHTML.js";
@@ -72,21 +72,24 @@ router.get("/", async (req, res) => {
     let serverDescription = serverInfo?.nodeInfo?.metadata?.nodeDescription;
 
     if (serverDescription && !isHTML(serverDescription)) {
-      serverDescription = linkifyUrlsToHtml(
+      serverDescription = linkifyHtml(
         serverInfo?.nodeInfo?.metadata?.nodeDescription,
         {
           attributes: {
             rel: "noreferrer",
             target: "_blank",
           },
-          value: (url) => {
-            const urlParsed = new URL(url);
-            return (
-              urlParsed.host +
-              urlParsed.pathname +
-              urlParsed.search +
-              urlParsed.hash
-            );
+          format: (value, type) => {
+            if (type === "url") {
+              const urlParsed = new URL(value);
+              return (
+                urlParsed.host +
+                urlParsed.pathname +
+                urlParsed.search +
+                urlParsed.hash
+              ).replace(/\/$/, "");
+            }
+            return value;
           },
         },
       );

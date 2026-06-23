@@ -13,12 +13,13 @@ import sortArrayOfObjects from "./modules/sortArrayOfObjects.js";
 import indexRoute from "./routes/index.js";
 import aboutRoute from "./routes/about.js";
 import starterpacksRoute from "./routes/starterpacks.js";
+import collectionsRoute from "./routes/collections.js";
 
 Handlebars.registerHelper("ifEquals", (firstArg, secondArg, options) => {
   return firstArg === secondArg ? options.fn(this) : options.inverse(this);
 });
 
-Handlebars.registerHelper("t", function(key) {
+Handlebars.registerHelper("t", function (key) {
   return new Handlebars.SafeString(i18n.__(key));
 });
 
@@ -116,5 +117,6 @@ app.set("views", "./views");
 app.use("/", indexRoute);
 app.use("/about", aboutRoute);
 app.use("/starterpacks", starterpacksRoute);
+app.use("/collections", collectionsRoute);
 
 export default app;
