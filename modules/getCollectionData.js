@@ -8,7 +8,12 @@ export default async (server, id) => {
     return {};
   }
 
-  const cacheFile = path.join("data/collections", `${server}-${id}.json`);
+  const cacheDir = path.resolve("data/collections");
+  const cacheFile = path.join(cacheDir, `${server}-${id}.json`);
+
+  if (!cacheFile.startsWith(cacheDir + path.sep)) {
+    return {};
+  }
 
   try {
     const stat = await fs.stat(cacheFile);

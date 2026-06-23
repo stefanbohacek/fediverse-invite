@@ -2,6 +2,7 @@ import express from "express";
 import linkifyHtml from "linkify-html";
 import getCollectionData from "../modules/getCollectionData.js";
 import isHTML from "../modules/isHTML.js";
+import validateDomain from "../modules/validateDomain.js";
 
 const router = express.Router();
 
@@ -41,7 +42,7 @@ const linkifyOptions = {
 router.get("/", async (req, res) => {
   let collectionsData = [];
 
-  if (req.query.server && req.query.ids) {
+  if (req.query.server && req.query.ids && validateDomain(req.query.server)) {
     const server = req.query.server;
     const collectionIDs = req.query.ids.split(",").slice(0, 8);
 

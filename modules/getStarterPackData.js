@@ -7,7 +7,12 @@ export default async (starterPackID) => {
   if (!starterPackID) return starterPackData;
   let starterPackData = {};
 
-  const cacheFile = path.join("data/starter-packs", `${starterPackID}.json`);
+  const cacheDir = path.resolve("data/starter-packs");
+  const cacheFile = path.join(cacheDir, `${starterPackID}.json`);
+
+  if (!cacheFile.startsWith(cacheDir + path.sep)) {
+    return {};
+  }
 
   try {
     const stat = await fs.stat(cacheFile);
