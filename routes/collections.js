@@ -10,7 +10,17 @@ const linkifyOptions = {
     rel: "noreferrer",
     target: "_blank",
   },
+  formatHref: (href, type) => {
+    if (type === "email") {
+      const [user, domain] = href.replace("mailto:", "").split("@");
+      return `https://${domain}/@${user}`;
+    }
+    return href;
+  },
   format: (value, type) => {
+    if (type === "email") {
+      return `@${value}`;
+    }
     if (type === "url") {
       try {
         const urlParsed = new URL(value);
@@ -49,9 +59,10 @@ router.get("/", async (req, res) => {
 
   collectionsData = collectionsData.map((data) => {
     if (data?.description && !isHTML(data.description)) {
+      const description = data.description.replace(/@([\w.+-]+@[\w.-]+\.\w+)/g, "$1");
       return {
         ...data,
-        description: linkifyHtml(data.description, linkifyOptions),
+        description: linkifyHtml(description, linkifyOptions),
       };
     }
     return data;

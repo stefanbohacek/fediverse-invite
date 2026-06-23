@@ -11,11 +11,16 @@ import getThemeCSS from "../modules/getThemeCSS.js";
 import domainBlocks from "../data/domain_blocks.json" with { type: "json" };
 import apps from "../data/apps.json" with { type: "json" };
 
-const communitiesPath = join(fileURLToPath(new URL("../data/communities", import.meta.url)));
+const communitiesPath = join(
+  fileURLToPath(new URL("../data/communities", import.meta.url)),
+);
 const communities = {};
+
 for (const file of readdirSync(communitiesPath)) {
   if (file.endsWith(".json")) {
-    communities[file.slice(0, -5)] = JSON.parse(readFileSync(join(communitiesPath, file), "utf8"));
+    communities[file.slice(0, -5)] = JSON.parse(
+      readFileSync(join(communitiesPath, file), "utf8"),
+    );
   }
 }
 
@@ -72,31 +77,43 @@ router.get("/", async (req, res) => {
     let serverDescription = serverInfo?.nodeInfo?.metadata?.nodeDescription;
 
     if (serverDescription && !isHTML(serverDescription)) {
-      serverDescription = linkifyHtml(
-        serverInfo?.nodeInfo?.metadata?.nodeDescription,
-        {
-          attributes: {
-            rel: "noreferrer",
-            target: "_blank",
-          },
-          format: (value, type) => {
-            if (type === "url") {
-              try {
-                const urlParsed = new URL(value);
-                return (
-                  urlParsed.host +
-                  urlParsed.pathname +
-                  urlParsed.search +
-                  urlParsed.hash
-                ).replace(/\/$/, "");
-              } catch {
-                return value;
-              }
-            }
-            return value;
-          },
+      const nodeDescription =
+        serverInfo?.nodeInfo?.metadata?.nodeDescription.replace(
+          /@([\w.+-]+@[\w.-]+\.\w+)/g,
+          "$1",
+        );
+      serverDescription = linkifyHtml(nodeDescription, {
+        attributes: {
+          rel: "noreferrer",
+          target: "_blank",
         },
-      );
+        formatHref: (href, type) => {
+          if (type === "email") {
+            const [user, domain] = href.replace("mailto:", "").split("@");
+            return `https://${domain}/@${user}`;
+          }
+          return href;
+        },
+        format: (value, type) => {
+          if (type === "email") {
+            return `@${value}`;
+          }
+          if (type === "url") {
+            try {
+              const urlParsed = new URL(value);
+              return (
+                urlParsed.host +
+                urlParsed.pathname +
+                urlParsed.search +
+                urlParsed.hash
+              ).replace(/\/$/, "");
+            } catch {
+              return value;
+            }
+          }
+          return value;
+        },
+      });
     }
 
     try {
@@ -123,8 +140,10 @@ router.get("/", async (req, res) => {
               notation: "compact",
             }).format(serverInfo.nodeInfo.usage.users.activeMonth)
           : null,
-        community_has_metadata: !!(communityData?.visible),
-        community_explore_url: communityData?.links?.explore_and_join ?? `https://${serverInfo.domain}`,
+        community_has_metadata: !!communityData?.visible,
+        community_explore_url:
+          communityData?.links?.explore_and_join ??
+          `https://${serverInfo.domain}`,
         community_year: communityData?.year ?? null,
         community_membership_cost: communityData?.membership_cost ?? null,
         community_blog_url: communityData?.links?.community_blog ?? null,
@@ -132,9 +151,7 @@ router.get("/", async (req, res) => {
         community_annual_reports: communityData?.annual_reports?.length
           ? communityData.annual_reports
           : null,
-        community_team: communityData?.team?.length
-          ? communityData.team
-          : null,
+        community_team: communityData?.team?.length ? communityData.team : null,
         recommend: recommendText,
         apps: appList,
         show_one_app: appList.length === 1,
