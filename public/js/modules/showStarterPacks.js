@@ -6,21 +6,6 @@ export default async () => {
 
   const requests = [];
 
-  if (starterPackIDs) {
-    requests.push(
-      fetch(`/starterpacks?ids=${starterPackIDs}`)
-        .then((resp) => resp.json())
-        .then((data) =>
-          data.map((pack) => ({
-            title: pack.title,
-            description: pack.description,
-            url: pack.url,
-            count: pack.accounts.length,
-          })),
-        ),
-    );
-  }
-
   if (collectionIDs) {
     const server = getUrlParam("server");
     requests.push(
@@ -33,6 +18,21 @@ export default async () => {
             url: collection.url,
             count: collection.item_count,
             creator: collection.creator,
+          })),
+        ),
+    );
+  }
+
+  if (starterPackIDs) {
+    requests.push(
+      fetch(`/starterpacks?ids=${starterPackIDs}`)
+        .then((resp) => resp.json())
+        .then((data) =>
+          data.map((pack) => ({
+            title: pack.title,
+            description: pack.description,
+            url: pack.url,
+            count: pack.accounts.length,
           })),
         ),
     );
