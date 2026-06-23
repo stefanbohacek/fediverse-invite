@@ -1,0 +1,7 @@
+[data-bs-theme="light"] .navbar-brand {
+  color: var(--bs-emphasis-color);
+}
+
+[data-bs-theme="light"] .navbar-brand:hover {
+  color: var(--bs-emphasis-color);
+}
