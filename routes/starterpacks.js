@@ -57,14 +57,14 @@ router.get("/", async (req, res) => {
   }
 
   starterPackData = starterPackData.map((pack) => {
-    if (pack?.description && !isHTML(pack.description)) {
+    if (pack?.description && isHTML(pack.description)) {
+      return { ...pack, description: pack.description.replace(/<[^>]*>/g, "") };
+    } else if (pack?.description) {
       const description = pack.description.replace(/@([\w.+-]+@[\w.-]+\.\w+)/g, "$1");
-      return {
-        ...pack,
-        description: linkifyHtml(description, linkifyOptions),
-      };
+      return { ...pack, description: linkifyHtml(description, linkifyOptions) };
+    } else {
+      return pack;
     }
-    return pack;
   });
 
   res.json(starterPackData);

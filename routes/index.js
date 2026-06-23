@@ -76,12 +76,13 @@ router.get("/", async (req, res) => {
 
     let serverDescription = serverInfo?.nodeInfo?.metadata?.nodeDescription;
 
-    if (serverDescription && !isHTML(serverDescription)) {
-      const nodeDescription =
-        serverInfo?.nodeInfo?.metadata?.nodeDescription.replace(
-          /@([\w.+-]+@[\w.-]+\.\w+)/g,
-          "$1",
-        );
+    if (serverDescription && isHTML(serverDescription)) {
+      serverDescription = serverDescription.replace(/<[^>]*>/g, "");
+    } else if (serverDescription) {
+      const nodeDescription = serverDescription.replace(
+        /@([\w.+-]+@[\w.-]+\.\w+)/g,
+        "$1",
+      );
       serverDescription = linkifyHtml(nodeDescription, {
         attributes: {
           rel: "noreferrer",

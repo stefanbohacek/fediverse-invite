@@ -58,14 +58,14 @@ router.get("/", async (req, res) => {
   }
 
   collectionsData = collectionsData.map((data) => {
-    if (data?.description && !isHTML(data.description)) {
+    if (data?.description && isHTML(data.description)) {
+      return { ...data, description: data.description.replace(/<[^>]*>/g, "") };
+    } else if (data?.description) {
       const description = data.description.replace(/@([\w.+-]+@[\w.-]+\.\w+)/g, "$1");
-      return {
-        ...data,
-        description: linkifyHtml(description, linkifyOptions),
-      };
+      return { ...data, description: linkifyHtml(description, linkifyOptions) };
+    } else {
+      return data;
     }
-    return data;
   });
 
   res.json(collectionsData);
