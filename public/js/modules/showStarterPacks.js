@@ -99,9 +99,12 @@ export default async () => {
     const link = document.createElement("a");
     link.className = "fs-6 btn btn-primary";
     link.textContent = window.translations.explore;
-    if (item.url?.startsWith("https://")) {
+
+    console.log("DEBUG:item", item);
+    
+    // if (item.url?.startsWith("https://")) {
       link.href = item.url;
-    }
+    // }
 
     cardFooter.appendChild(link);
     card.appendChild(cardBody);
