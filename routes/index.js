@@ -4,6 +4,7 @@ import { join } from "path";
 import { fileURLToPath } from "url";
 import linkifyHtml from "linkify-html";
 import getServerInfo from "../modules/getServerInfo.js";
+import getServerInfoAPI from "../modules/getServerInfoAPI.js";
 import slugify from "../modules/slugify.js";
 import isHTML from "../modules/isHTML.js";
 import validateDomain from "../modules/validateDomain.js";
@@ -75,6 +76,15 @@ router.get("/", async (req, res) => {
     });
 
     let serverDescription = serverInfo?.nodeInfo?.metadata?.nodeDescription;
+
+    if (!serverDescription) {
+      const serverInfoAPI = await getServerInfoAPI(server);
+      serverDescription =
+        serverInfoAPI?.description_text ||
+        serverInfoAPI?.short_description_text ||
+        serverInfoAPI?.description ||
+        serverInfoAPI?.short_description;
+    }
 
     if (serverDescription && isHTML(serverDescription)) {
       serverDescription = serverDescription.replace(/<[^>]*>/g, "");
