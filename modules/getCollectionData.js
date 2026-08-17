@@ -1,29 +1,16 @@
-import fs from "fs/promises";
-import path from "path";
-
-const cacheTimeout = 60 * 60 * 1000;
+import { readCache, writeCache } from "./cache.js";
 
 export default async (server, id) => {
   if (!server || !id) {
     return {};
   }
 
-  const cacheDir = path.resolve("data/collections");
-  const cacheFile = path.join(cacheDir, `${server}-${id}.json`);
+  const cacheDir = "data/collections";
+  const cacheKey = `${server}-${id}`;
 
-  if (!cacheFile.startsWith(cacheDir + path.sep)) {
-    return {};
-  }
-
-  try {
-    const stat = await fs.stat(cacheFile);
-    const cacheFileAge = Date.now() - stat.mtimeMs;
-    if (cacheFileAge < cacheTimeout) {
-      const cached = await fs.readFile(cacheFile, "utf-8");
-      return JSON.parse(cached);
-    }
-  } catch {
-    // noop
+  const cached = await readCache(cacheDir, cacheKey);
+  if (cached) {
+    return cached;
   }
 
   let collectionData = {};
@@ -53,8 +40,7 @@ export default async (server, id) => {
       creator,
     };
 
-    await fs.mkdir("data/collections", { recursive: true });
-    await fs.writeFile(cacheFile, JSON.stringify(collectionData), "utf-8");
+    await writeCache(cacheDir, cacheKey, collectionData);
   } catch (err) {
     console.error(`Failed to fetch collection ${id} from ${server}:`, err);
   }

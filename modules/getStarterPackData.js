@@ -1,28 +1,18 @@
-import fs from "fs/promises";
-import path from "path";
-
-const cacheTimeout = 60 * 60 * 1000;
+import { readCache, writeCache } from "./cache.js";
 
 export default async (starterPackID) => {
-  if (!starterPackID) return starterPackData;
   let starterPackData = {};
 
-  const cacheDir = path.resolve("data/starter-packs");
-  const cacheFile = path.join(cacheDir, `${starterPackID}.json`);
-
-  if (!cacheFile.startsWith(cacheDir + path.sep)) {
-    return {};
+  if (!starterPackID) {
+    return starterPackData;
   }
 
-  try {
-    const stat = await fs.stat(cacheFile);
-    const cacheFileAge = Date.now() - stat.mtimeMs;
-    if (cacheFileAge < cacheTimeout) {
-      const cached = await fs.readFile(cacheFile, "utf-8");
-      return JSON.parse(cached);
-    }
-  } catch {
-    // noop
+  const cacheDir = "data/starter-packs";
+  const cacheKey = starterPackID;
+
+  const cached = await readCache(cacheDir, cacheKey);
+  if (cached) {
+    return cached;
   }
 
   try {
@@ -34,10 +24,9 @@ export default async (starterPackID) => {
 
     starterPackData = await response.json();
 
-    await fs.mkdir("data/starter-packs", { recursive: true });
-    await fs.writeFile(cacheFile, JSON.stringify(starterPackData), "utf-8");
-  } catch (error) {
-    console.error(`Failed to fetch starter pack ${starterPackID}:`, error);
+    await writeCache(cacheDir, cacheKey, starterPackData);
+  } catch (err) {
+    console.error(`Failed to fetch starter pack ${starterPackID}:`, err);
   }
 
   return starterPackData;
